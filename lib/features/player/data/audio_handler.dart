@@ -51,11 +51,15 @@ class JustAudioMeditationHandler extends MeditationAudioHandler {
         mediaItem.add(item.copyWith(duration: duration));
       }
     });
-    unawaited(_configureSession());
+    _sessionReady = _configureSession();
   }
 
   final AudioPlayer _player;
   AudioSession? _session;
+
+  /// Completes once the audio session is configured. [play] waits for it, so
+  /// an early tap cannot start playback without an active session.
+  late final Future<void> _sessionReady;
 
   /// Speech/meditation audio focus: pauses for phone calls and other apps,
   /// and when headphones are unplugged. It does not resume on its own, so a
@@ -87,6 +91,7 @@ class JustAudioMeditationHandler extends MeditationAudioHandler {
 
   @override
   Future<void> play() async {
+    await _sessionReady;
     await _session?.setActive(true);
     await _player.play();
   }
