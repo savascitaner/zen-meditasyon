@@ -6,6 +6,8 @@ analyzer:
     - android/**
     - ios/**
     - lib/l10n/app_localizations*.dart
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'
 
 linter:
   rules:
