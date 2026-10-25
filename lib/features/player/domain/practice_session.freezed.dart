@@ -17,6 +17,9 @@ T _$identity<T>(T value) => value;
 mixin _$PracticeSession {
 
  String get meditationId; DateTime get startedAt;/// Seconds actually listened to; skipping ahead does not count.
+///
+/// The fields below default so records saved by older versions stay
+/// readable.
  int get listenedSeconds; bool get completed;
 /// Create a copy of PracticeSession
 /// with the given fields replaced by the non-null parameter values.
@@ -219,14 +222,17 @@ return $default(_that.meditationId,_that.startedAt,_that.listenedSeconds,_that.c
 @JsonSerializable()
 
 class _PracticeSession implements PracticeSession {
-  const _PracticeSession({required this.meditationId, required this.startedAt, required this.listenedSeconds, required this.completed});
+  const _PracticeSession({required this.meditationId, required this.startedAt, this.listenedSeconds = 0, this.completed = false});
   factory _PracticeSession.fromJson(Map<String, dynamic> json) => _$PracticeSessionFromJson(json);
 
 @override final  String meditationId;
 @override final  DateTime startedAt;
 /// Seconds actually listened to; skipping ahead does not count.
-@override final  int listenedSeconds;
-@override final  bool completed;
+///
+/// The fields below default so records saved by older versions stay
+/// readable.
+@override@JsonKey() final  int listenedSeconds;
+@override@JsonKey() final  bool completed;
 
 /// Create a copy of PracticeSession
 /// with the given fields replaced by the non-null parameter values.

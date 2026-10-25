@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../domain/practice_log_repository.dart';
@@ -32,12 +33,23 @@ class LocalPracticeLogRepository implements PracticeLogRepository {
   Future<void> add(PracticeSession session) {
     if (session.listenedSeconds < minListenedSeconds) return Future.value();
     _sessions = [..._sessions, session];
-    _changes.add(List.unmodifiable(_sessions));
+    // The player may still record a session while the app tears down.
+    if (!_changes.isClosed) _changes.add(List.unmodifiable(_sessions));
     final encoded = jsonEncode([for (final s in _sessions) s.toJson()]);
-    return _lastWrite = _lastWrite
-        .catchError((Object _) => false)
-        .then((_) => _prefs.setString(storageKey, encoded));
+    return _lastWrite = _lastWrite.then((_) async {
+      // A failed write is logged, not thrown: the session stays in memory
+      // and the next write saves the whole list again.
+      try {
+        final saved = await _prefs.setString(storageKey, encoded);
+        if (!saved) debugPrint('Practice log: the write was not saved.');
+      } catch (error, stackTrace) {
+        debugPrint('Practice log: saving failed: $error\n$stackTrace');
+      }
+    });
   }
+
+  /// Closes the change stream; called when the provider is disposed.
+  Future<void> dispose() => _changes.close();
 
   @override
   Future<List<PracticeSession>> getAll() async => List.unmodifiable(_sessions);

@@ -25,9 +25,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navProfile => 'Profile';
 
   @override
-  String get homePlaceholder => 'Your daily practice will appear here.';
-
-  @override
   String get programsPlaceholder => 'Guided programs will appear here.';
 
   @override
@@ -268,4 +265,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get favoritesEmptyAction => 'Explore meditations';
+
+  @override
+  String get greetingMorning => 'Good morning';
+
+  @override
+  String get greetingAfternoon => 'Good afternoon';
+
+  @override
+  String get greetingEvening => 'Good evening';
+
+  @override
+  String get recommendationLabel => 'Suggested for today';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days in a row',
+      one: '1 day in a row',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get streakRestart => 'A good day to begin again.';
+
+  @override
+  String get streakInvite => 'Your first session can start today.';
+
+  @override
+  String streakLongest(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+    );
+    return 'Your longest run: $_temp0';
+  }
+
+  @override
+  String weekDotsSemantics(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'This week you practised $count days',
+      one: 'This week you practised 1 day',
+      zero: 'No practice yet this week',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get statsMinutes => 'minutes of practice';
+
+  @override
+  String get statsSessions => 'sessions completed';
+
+  @override
+  String get homeContinueTitle => 'Continue where you left off';
+
+  @override
+  String get homeFavoritesTitle => 'Your favorites';
 }

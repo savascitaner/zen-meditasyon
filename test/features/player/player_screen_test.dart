@@ -8,6 +8,7 @@ import 'package:zen_meditation/core/router/app_router.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
 import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
+import 'package:zen_meditation/features/player/presentation/player_screen.dart';
 import 'package:zen_meditation/features/player/presentation/session_complete_sheet.dart';
 import 'package:zen_meditation/features/player/presentation/widgets/breathing_circle.dart';
 
@@ -100,7 +101,7 @@ void main() {
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
     expect(find.byType(SessionCompleteSheet), findsNothing);
-    expect(find.text('Winding down'), findsNothing);
+    expect(find.byType(PlayerScreen), findsNothing);
     expect(handler.stopCalls, 1);
   });
 }

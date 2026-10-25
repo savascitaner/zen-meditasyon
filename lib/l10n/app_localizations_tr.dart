@@ -25,9 +25,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get navProfile => 'Profil';
 
   @override
-  String get homePlaceholder => 'Günlük pratiğin burada görünecek.';
-
-  @override
   String get programsPlaceholder => 'Rehberli programlar burada görünecek.';
 
   @override
@@ -268,4 +265,55 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get favoritesEmptyAction => 'Meditasyonları keşfet';
+
+  @override
+  String get greetingMorning => 'Günaydın';
+
+  @override
+  String get greetingAfternoon => 'İyi günler';
+
+  @override
+  String get greetingEvening => 'İyi akşamlar';
+
+  @override
+  String get recommendationLabel => 'Bugün için önerimiz';
+
+  @override
+  String streakDays(int count) {
+    return '$count gün üst üste';
+  }
+
+  @override
+  String get streakRestart => 'Yeniden başlamak için güzel bir gün.';
+
+  @override
+  String get streakInvite => 'İlk pratiğin bugün başlayabilir.';
+
+  @override
+  String streakLongest(int count) {
+    return 'En uzun serin: $count gün';
+  }
+
+  @override
+  String weekDotsSemantics(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bu hafta $count gün pratik yaptın',
+      zero: 'Bu hafta henüz pratik yok',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get statsMinutes => 'dakika pratik';
+
+  @override
+  String get statsSessions => 'tamamlanan oturum';
+
+  @override
+  String get homeContinueTitle => 'Kaldığın yerden';
+
+  @override
+  String get homeFavoritesTitle => 'Favorilerin';
 }

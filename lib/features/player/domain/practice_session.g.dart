@@ -10,8 +10,8 @@ _PracticeSession _$PracticeSessionFromJson(Map<String, dynamic> json) =>
     _PracticeSession(
       meditationId: json['meditationId'] as String,
       startedAt: DateTime.parse(json['startedAt'] as String),
-      listenedSeconds: (json['listenedSeconds'] as num).toInt(),
-      completed: json['completed'] as bool,
+      listenedSeconds: (json['listenedSeconds'] as num?)?.toInt() ?? 0,
+      completed: json['completed'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$PracticeSessionToJson(_PracticeSession instance) =>
