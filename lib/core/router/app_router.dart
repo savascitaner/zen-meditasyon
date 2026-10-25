@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/explore/presentation/explore_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/meditation_detail/presentation/meditation_detail_screen.dart';
-import '../../features/player/presentation/player_placeholder_screen.dart';
+import '../../features/player/presentation/player_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/programs/presentation/programs_screen.dart';
 import '../../shared/widgets/app_scaffold_with_nav.dart';
@@ -67,7 +67,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: RouteNames.playerPath,
         name: RouteNames.player,
         builder: (context, state) =>
-            PlayerPlaceholderScreen(meditationId: state.pathParameters['id']!),
+            PlayerScreen(meditationId: state.pathParameters['id']!),
       ),
     ],
   );

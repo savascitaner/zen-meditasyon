@@ -114,7 +114,43 @@ class AppLocalizationsTr extends AppLocalizations {
   String get playerTitle => 'Oynatıcı';
 
   @override
-  String get playerPlaceholder => 'Oynatıcı yakında burada olacak.';
+  String get playerPlay => 'Oynat';
+
+  @override
+  String get playerPause => 'Duraklat';
+
+  @override
+  String get playerBack15 => '15 saniye geri';
+
+  @override
+  String get playerForward15 => '15 saniye ileri';
+
+  @override
+  String playerRemaining(String time) {
+    return '$time kaldı';
+  }
+
+  @override
+  String get playerClose => 'Oynatıcıyı kapat';
+
+  @override
+  String get playerReplay => 'Tekrar dinle';
+
+  @override
+  String get playerUnavailableTitle => 'Bu ses şu anda çalınamıyor';
+
+  @override
+  String get playerUnavailableMessage => 'Biraz sonra tekrar deneyebilirsin.';
+
+  @override
+  String get sessionCompleteTitle => 'Oturum tamamlandı';
+
+  @override
+  String get sessionCompleteMessage =>
+      'Kendine bu zamanı ayırdığın için teşekkürler. Bu sakinliği iyi geldiği sürece yanında taşıyabilirsin.';
+
+  @override
+  String get sessionCompleteDone => 'Tamam';
 
   @override
   String get languageSectionTitle => 'Dil';

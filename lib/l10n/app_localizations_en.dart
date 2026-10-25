@@ -115,7 +115,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get playerTitle => 'Player';
 
   @override
-  String get playerPlaceholder => 'The player will appear here soon.';
+  String get playerPlay => 'Play';
+
+  @override
+  String get playerPause => 'Pause';
+
+  @override
+  String get playerBack15 => 'Back 15 seconds';
+
+  @override
+  String get playerForward15 => 'Forward 15 seconds';
+
+  @override
+  String playerRemaining(String time) {
+    return '$time left';
+  }
+
+  @override
+  String get playerClose => 'Close player';
+
+  @override
+  String get playerReplay => 'Listen again';
+
+  @override
+  String get playerUnavailableTitle => 'This audio can\'t be played right now';
+
+  @override
+  String get playerUnavailableMessage => 'Please try again in a moment.';
+
+  @override
+  String get sessionCompleteTitle => 'Session complete';
+
+  @override
+  String get sessionCompleteMessage =>
+      'Thank you for taking this time for yourself. Carry this calm with you for as long as it feels good.';
+
+  @override
+  String get sessionCompleteDone => 'Done';
 
   @override
   String get languageSectionTitle => 'Language';

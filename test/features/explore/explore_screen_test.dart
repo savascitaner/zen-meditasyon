@@ -9,8 +9,10 @@ import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
 import 'package:zen_meditation/features/explore/presentation/widgets/meditation_card.dart';
 import 'package:zen_meditation/features/meditation_detail/presentation/meditation_detail_screen.dart';
-import 'package:zen_meditation/features/player/presentation/player_placeholder_screen.dart';
+import 'package:zen_meditation/features/player/presentation/player_providers.dart';
+import 'package:zen_meditation/features/player/presentation/player_screen.dart';
 
+import '../../helpers/fake_audio_handler.dart';
 import '../../helpers/fake_content_repository.dart';
 
 /// Starts the app and opens the Explore tab.
@@ -33,6 +35,7 @@ Future<void> openExplore(
         sharedPreferencesProvider.overrideWithValue(prefs),
         deviceLocaleProvider.overrideWithValue(device),
         contentRepositoryProvider.overrideWithValue(repository),
+        audioHandlerProvider.overrideWithValue(FakeAudioHandler()),
       ],
       child: const App(),
     ),
@@ -179,7 +182,7 @@ void main() {
     await tester.tap(find.text('Start'));
     await tester.pumpAndSettle();
 
-    expect(find.byType(PlayerPlaceholderScreen), findsOneWidget);
+    expect(find.byType(PlayerScreen), findsOneWidget);
   });
 
   testWidgets('premium detail page shows unlock and a snack bar', (
@@ -193,7 +196,7 @@ void main() {
     await tester.pump();
 
     expect(find.text('Premium plans are coming soon.'), findsOneWidget);
-    expect(find.byType(PlayerPlaceholderScreen), findsNothing);
+    expect(find.byType(PlayerScreen), findsNothing);
   });
 
   testWidgets('shows an empty state and clears filters', (tester) async {
