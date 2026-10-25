@@ -7,12 +7,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zen_meditation/app.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
+import 'package:zen_meditation/features/explore/presentation/widgets/filter_chip_row.dart';
 import 'package:zen_meditation/features/explore/presentation/widgets/meditation_card.dart';
 import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
 import 'package:zen_meditation/features/safety/presentation/safety_providers.dart';
 import 'package:zen_meditation/features/meditation_detail/presentation/meditation_detail_screen.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 import 'package:zen_meditation/features/player/presentation/player_screen.dart';
+import 'package:zen_meditation/shared/widgets/premium_badge.dart';
 
 import '../../helpers/fake_audio_handler.dart';
 import '../../helpers/fake_content_repository.dart';
@@ -64,7 +66,7 @@ Future<void> openExplore(
 
 Finder card(String title) => find.widgetWithText(MeditationCard, title);
 
-Finder chip(String label) => find.widgetWithText(ChoiceChip, label);
+Finder chip(String label) => find.widgetWithText(GlowChip, label);
 
 void main() {
   testWidgets('shows a spinner while loading, then the list', (tester) async {
@@ -133,14 +135,14 @@ void main() {
     expect(
       find.descendant(
         of: card('Long night breath'),
-        matching: find.byIcon(Icons.lock),
+        matching: find.byIcon(premiumLockIcon),
       ),
       findsOneWidget,
     );
     expect(
       find.descendant(
         of: card('Winding down'),
-        matching: find.byIcon(Icons.lock),
+        matching: find.byIcon(premiumLockIcon),
       ),
       findsNothing,
     );
@@ -230,6 +232,84 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('3 meditations'), findsOneWidget);
+  });
+
+  testWidgets('chips report their selected state to screen readers', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await openExplore(tester, repository: FakeContentRepository());
+
+    expect(
+      tester.getSemantics(chip('All')),
+      matchesSemantics(
+        label: 'All',
+        isButton: true,
+        hasSelectedState: true,
+        isSelected: true,
+        isInMutuallyExclusiveGroup: true,
+        hasTapAction: true,
+        hasEnabledState: false,
+      ),
+    );
+
+    await tester.tap(chip('Focus'));
+    await tester.pumpAndSettle();
+    expect(tester.getSemantics(chip('All')), isSemantics(isSelected: false));
+    expect(tester.getSemantics(chip('Focus')), isSemantics(isSelected: true));
+    semantics.dispose();
+  });
+
+  testWidgets('premium shimmer stays off with Reduce Motion', (tester) async {
+    tester.platformDispatcher.accessibilityFeaturesTestValue =
+        const FakeAccessibilityFeatures(disableAnimations: true);
+    addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
+    await openExplore(
+      tester,
+      repository: FakeContentRepository(),
+      settle: false,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(PremiumCornerMark),
+        matching: find.byType(ShaderMask),
+      ),
+      findsNothing,
+    );
+  });
+
+  testWidgets('premium shimmer plays once and then rests', (tester) async {
+    await openExplore(
+      tester,
+      repository: FakeContentRepository(),
+      settle: false,
+    );
+    await tester.pump(const Duration(milliseconds: 1500));
+    final shimmer = find.descendant(
+      of: find.byType(PremiumCornerMark),
+      matching: find.byType(ShaderMask),
+    );
+    expect(shimmer, findsOneWidget);
+
+    await tester.pumpAndSettle();
+    expect(shimmer, findsNothing);
+  });
+
+  testWidgets('glass cards turn solid with Increase Contrast', (tester) async {
+    tester.platformDispatcher.accessibilityFeaturesTestValue =
+        const FakeAccessibilityFeatures(highContrast: true);
+    addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
+    await openExplore(tester, repository: FakeContentRepository());
+
+    final filters = tester.widgetList<BackdropFilter>(
+      find.descendant(
+        of: find.byType(MeditationCard),
+        matching: find.byType(BackdropFilter),
+      ),
+    );
+    expect(filters, isNotEmpty);
+    expect(filters.every((filter) => !filter.enabled), isTrue);
   });
 
   testWidgets('shows content in Turkish on a Turkish device', (tester) async {

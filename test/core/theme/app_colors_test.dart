@@ -12,7 +12,7 @@ double contrast(Color a, Color b) {
 
 void main() {
   test('text colours meet WCAG AA (4.5:1) on their backgrounds', () {
-    const pairs = <(Color, Color)>[
+    final pairs = <(Color, Color)>[
       (AppColors.textPrimary, AppColors.background),
       (AppColors.textPrimary, AppColors.surface),
       (AppColors.textSecondary, AppColors.background),
@@ -22,6 +22,18 @@ void main() {
       (AppColors.onSecondary, AppColors.secondary),
       (AppColors.onError, AppColors.error),
       (AppColors.accent, AppColors.background),
+      // Gradient stops behind screen text.
+      (AppColors.textPrimary, AppColors.backgroundTop),
+      (AppColors.textSecondary, AppColors.backgroundTop),
+      (AppColors.textPrimary, AppColors.backgroundBottom),
+      (AppColors.textSecondary, AppColors.backgroundBottom),
+      // Text on glass cards and chips, over the brightest glow.
+      (AppColors.textPrimary, AppColors.glassOverGlow),
+      (AppColors.textSecondary, AppColors.glassOverGlow),
+      (AppColors.textPastel, AppColors.glassOverGlow),
+      (AppColors.onChipSelected, AppColors.chipSelected),
+      (AppColors.gold, AppColors.glassOverGlow),
+      (AppColors.gold, AppColors.surface),
     ];
     for (final (fg, bg) in pairs) {
       expect(contrast(fg, bg), greaterThanOrEqualTo(4.5), reason: '$fg on $bg');
