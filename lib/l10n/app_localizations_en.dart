@@ -329,4 +329,73 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeFavoritesTitle => 'Your favorites';
+
+  @override
+  String get reminderSectionTitle => 'Daily reminder';
+
+  @override
+  String get reminderSubtitle =>
+      'A gentle nudge once a day, at the time you choose.';
+
+  @override
+  String get reminderTimeLabel => 'Reminder time';
+
+  @override
+  String get reminderTimeDone => 'Done';
+
+  @override
+  String get reminderPermissionDenied =>
+      'Notifications are turned off for Ensora. You can allow them in Settings.';
+
+  @override
+  String get reminderOpenSettings => 'Open Settings';
+
+  @override
+  String get reminderTitleMorning => 'Morning breath';
+
+  @override
+  String get reminderTitleAfternoon => 'A pause for you';
+
+  @override
+  String get reminderTitleEvening => 'Evening calm';
+
+  @override
+  String get reminderBody1 =>
+      'A few quiet minutes are waiting whenever you are ready.';
+
+  @override
+  String get reminderBody2 =>
+      'Take a slow breath. Your practice is here when you want it.';
+
+  @override
+  String get reminderBody3 =>
+      'Even one minute of stillness can soften the day.';
+
+  @override
+  String get reminderBody4 =>
+      'Let your shoulders drop. A short pause is just a tap away.';
+
+  @override
+  String get reminderBody5 => 'A moment for yourself, at your own pace.';
+
+  @override
+  String get reminderBody6 => 'Come as you are. Breathe in, breathe out.';
+
+  @override
+  String get reminderBody7 =>
+      'Slow down for a little while. You have earned it.';
+
+  @override
+  String get reminderInviteTitle => 'Remind you every day at this time?';
+
+  @override
+  String reminderInviteBody(String time) {
+    return 'A soft nudge at $time. You can change or turn it off in Profile.';
+  }
+
+  @override
+  String get reminderInviteYes => 'Yes, remind me';
+
+  @override
+  String get reminderInviteNo => 'Not now';
 }

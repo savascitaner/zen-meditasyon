@@ -316,4 +316,71 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get homeFavoritesTitle => 'Favorilerin';
+
+  @override
+  String get reminderSectionTitle => 'Günlük hatırlatma';
+
+  @override
+  String get reminderSubtitle => 'Seçtiğin saatte günde bir nazik hatırlatma.';
+
+  @override
+  String get reminderTimeLabel => 'Hatırlatma saati';
+
+  @override
+  String get reminderTimeDone => 'Tamam';
+
+  @override
+  String get reminderPermissionDenied =>
+      'Ensora için bildirimler kapalı. Bildirimlere Ayarlar\'dan izin verebilirsin.';
+
+  @override
+  String get reminderOpenSettings => 'Ayarlar\'ı aç';
+
+  @override
+  String get reminderTitleMorning => 'Sabah nefesi';
+
+  @override
+  String get reminderTitleAfternoon => 'Kendine bir mola';
+
+  @override
+  String get reminderTitleEvening => 'Akşam huzuru';
+
+  @override
+  String get reminderBody1 =>
+      'Birkaç sakin dakika, hazır olduğunda seni bekliyor.';
+
+  @override
+  String get reminderBody2 =>
+      'Yavaşça bir nefes al. Pratiğin istediğinde burada.';
+
+  @override
+  String get reminderBody3 =>
+      'Bir dakikalık sessizlik bile günü yumuşatabilir.';
+
+  @override
+  String get reminderBody4 =>
+      'Omuzlarını bırak. Kısa bir mola bir dokunuş uzağında.';
+
+  @override
+  String get reminderBody5 => 'Kendine ayırdığın bir an, kendi temponda.';
+
+  @override
+  String get reminderBody6 => 'Olduğun gibi gel. Nefes al, nefes ver.';
+
+  @override
+  String get reminderBody7 => 'Bir süre yavaşla. Bunu hak ettin.';
+
+  @override
+  String get reminderInviteTitle => 'Her gün bu saatte hatırlatayım mı?';
+
+  @override
+  String reminderInviteBody(String time) {
+    return '$time saatinde nazik bir hatırlatma. Profil\'den değiştirebilir ya da kapatabilirsin.';
+  }
+
+  @override
+  String get reminderInviteYes => 'Evet, hatırlat';
+
+  @override
+  String get reminderInviteNo => 'Şimdi değil';
 }
