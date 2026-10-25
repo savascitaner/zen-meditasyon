@@ -10,4 +10,7 @@ abstract final class AppSpacing {
   static const double radiusSm = 8;
   static const double radiusMd = 16;
   static const double radiusLg = 24;
+
+  /// Minimum size of anything tappable (Material / WCAG guidance).
+  static const double minTouchTarget = 48;
 }
