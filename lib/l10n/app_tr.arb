@@ -70,5 +70,11 @@
   "experienceSomeTitle": "Birkaç kez denedim",
   "experienceSomeSubtitle": "Temelleri biliyorum ve devam etmek istiyorum.",
   "experienceRegularTitle": "Düzenli pratik yapıyorum",
-  "experienceRegularSubtitle": "Meditasyon zaten rutinimin bir parçası."
+  "experienceRegularSubtitle": "Meditasyon zaten rutinimin bir parçası.",
+  "favoritesTitle": "Favorilerim",
+  "favoriteAdd": "Favorilere ekle",
+  "favoriteRemove": "Favorilerden çıkar",
+  "favoritesEmptyTitle": "Henüz favorin yok",
+  "favoritesEmptyMessage": "Tekrar dönmek istediğin bir meditasyonda kalbe dokun, burada seni beklesin.",
+  "favoritesEmptyAction": "Meditasyonları keşfet"
 }

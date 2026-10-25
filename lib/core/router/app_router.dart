@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/explore/presentation/explore_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
+import '../../features/library/presentation/favorites_screen.dart';
 import '../../features/meditation_detail/presentation/meditation_detail_screen.dart';
 import '../../features/onboarding/presentation/onboarding_controller.dart';
 import '../../features/onboarding/presentation/survey_screen.dart';
@@ -96,6 +97,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         name: RouteNames.meditationDetail,
         builder: (context, state) =>
             MeditationDetailScreen(meditationId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: RouteNames.favoritesPath,
+        name: RouteNames.favorites,
+        builder: (context, state) => const FavoritesScreen(),
       ),
       GoRoute(
         path: RouteNames.playerPath,

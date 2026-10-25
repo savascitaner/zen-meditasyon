@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/locale_controller.dart';
+import '../../../core/router/route_names.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -31,6 +33,15 @@ class ProfileScreen extends ConsumerWidget {
             onSelectionChanged: (selection) => ref
                 .read(localeControllerProvider.notifier)
                 .setLocale(Locale(selection.first)),
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            minTileHeight: AppSpacing.minTouchTarget,
+            leading: const Icon(Icons.favorite_border),
+            title: Text(l10n.favoritesTitle),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push(RouteNames.favoritesPath),
           ),
           const SizedBox(height: AppSpacing.lg),
           Text(

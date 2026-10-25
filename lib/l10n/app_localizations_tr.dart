@@ -249,4 +249,23 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get experienceRegularSubtitle =>
       'Meditasyon zaten rutinimin bir parçası.';
+
+  @override
+  String get favoritesTitle => 'Favorilerim';
+
+  @override
+  String get favoriteAdd => 'Favorilere ekle';
+
+  @override
+  String get favoriteRemove => 'Favorilerden çıkar';
+
+  @override
+  String get favoritesEmptyTitle => 'Henüz favorin yok';
+
+  @override
+  String get favoritesEmptyMessage =>
+      'Tekrar dönmek istediğin bir meditasyonda kalbe dokun, burada seni beklesin.';
+
+  @override
+  String get favoritesEmptyAction => 'Meditasyonları keşfet';
 }
