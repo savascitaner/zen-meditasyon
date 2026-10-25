@@ -26,7 +26,12 @@ class LocalContentRepository implements ContentRepository {
       .then(
         (raw) =>
             ContentCatalog.fromJson(jsonDecode(raw) as Map<String, dynamic>),
-      );
+      )
+      .catchError((Object error) {
+        // Forget the failure so the next call can try again.
+        _catalog = null;
+        throw error;
+      });
 
   @override
   Future<List<Category>> getCategories() async => (await _load()).categories;

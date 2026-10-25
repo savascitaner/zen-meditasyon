@@ -48,6 +48,21 @@ const _smallCatalog = '''
 }
 ''';
 
+/// Fails the first load, then serves [contents].
+class _FlakyBundle extends CachingAssetBundle {
+  _FlakyBundle(this.contents);
+
+  final String contents;
+  int loadCount = 0;
+
+  @override
+  Future<ByteData> load(String key) async {
+    loadCount++;
+    if (loadCount == 1) throw StateError('asset not ready');
+    return ByteData.sublistView(Uint8List.fromList(utf8.encode(contents)));
+  }
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -97,6 +112,19 @@ void main() {
           },
         ]),
       );
+    });
+  });
+
+  group('loading failures', () {
+    test('retries after the asset fails to load once', () async {
+      final bundle = _FlakyBundle(_smallCatalog);
+      final repo = LocalContentRepository(bundle: bundle);
+
+      await expectLater(repo.getCategories(), throwsStateError);
+      final categories = await repo.getCategories();
+
+      expect(categories.single.id, 'sleep');
+      expect(bundle.loadCount, 2);
     });
   });
 
