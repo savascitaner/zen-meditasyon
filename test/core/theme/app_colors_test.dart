@@ -34,6 +34,8 @@ void main() {
       (AppColors.onChipSelected, AppColors.chipSelected),
       (AppColors.gold, AppColors.glassOverGlow),
       (AppColors.gold, AppColors.surface),
+      // Navy text on gold (colour scheme tertiary).
+      (AppColors.backgroundTop, AppColors.gold),
     ];
     for (final (fg, bg) in pairs) {
       expect(contrast(fg, bg), greaterThanOrEqualTo(4.5), reason: '$fg on $bg');

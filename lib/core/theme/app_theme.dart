@@ -14,6 +14,9 @@ abstract final class AppTheme {
     onPrimaryContainer: AppColors.onAccentContainer,
     secondary: AppColors.secondary,
     onSecondary: AppColors.onSecondary,
+    // Gold with navy text, for premium marks.
+    tertiary: AppColors.gold,
+    onTertiary: AppColors.backgroundTop,
     error: AppColors.error,
     onError: AppColors.onError,
     surface: AppColors.surface,
