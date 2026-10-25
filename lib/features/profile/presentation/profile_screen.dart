@@ -6,6 +6,7 @@ import '../../../core/l10n/locale_controller.dart';
 import '../../../core/router/route_names.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../reminders/presentation/reminder_settings_tile.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -35,6 +36,8 @@ class ProfileScreen extends ConsumerWidget {
                 .setLocale(Locale(selection.first)),
           ),
           const SizedBox(height: AppSpacing.lg),
+          const ReminderSettingsTile(),
+          const SizedBox(height: AppSpacing.md),
           ListTile(
             contentPadding: EdgeInsets.zero,
             minTileHeight: AppSpacing.minTouchTarget,

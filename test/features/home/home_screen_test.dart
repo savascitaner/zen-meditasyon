@@ -121,6 +121,11 @@ void main() {
       [for (var i = 0; i < 7; i++) filled(i)],
       [false, false, true, true, false, false, false],
     );
+    // The reminder invitation sits above the strips, so scroll down to them.
+    await tester.scrollUntilVisible(
+      find.text('Continue where you left off'),
+      200,
+    );
     expect(find.text('Continue where you left off'), findsOneWidget);
   });
 

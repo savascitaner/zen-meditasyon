@@ -631,6 +631,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your favorites'**
   String get homeFavoritesTitle;
+
+  /// Title of the reminder switch on the profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder'**
+  String get reminderSectionTitle;
+
+  /// No description provided for @reminderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A gentle nudge once a day, at the time you choose.'**
+  String get reminderSubtitle;
+
+  /// No description provided for @reminderTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get reminderTimeLabel;
+
+  /// No description provided for @reminderTimeDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get reminderTimeDone;
+
+  /// No description provided for @reminderPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are turned off for Ensora. You can allow them in Settings.'**
+  String get reminderPermissionDenied;
+
+  /// No description provided for @reminderOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get reminderOpenSettings;
+
+  /// Notification title for reminders before noon.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning breath'**
+  String get reminderTitleMorning;
+
+  /// Notification title for reminders from noon to 6 pm.
+  ///
+  /// In en, this message translates to:
+  /// **'A pause for you'**
+  String get reminderTitleAfternoon;
+
+  /// Notification title for reminders from 6 pm.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening calm'**
+  String get reminderTitleEvening;
+
+  /// No description provided for @reminderBody1.
+  ///
+  /// In en, this message translates to:
+  /// **'A few quiet minutes are waiting whenever you are ready.'**
+  String get reminderBody1;
+
+  /// No description provided for @reminderBody2.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a slow breath. Your practice is here when you want it.'**
+  String get reminderBody2;
+
+  /// No description provided for @reminderBody3.
+  ///
+  /// In en, this message translates to:
+  /// **'Even one minute of stillness can soften the day.'**
+  String get reminderBody3;
+
+  /// No description provided for @reminderBody4.
+  ///
+  /// In en, this message translates to:
+  /// **'Let your shoulders drop. A short pause is just a tap away.'**
+  String get reminderBody4;
+
+  /// No description provided for @reminderBody5.
+  ///
+  /// In en, this message translates to:
+  /// **'A moment for yourself, at your own pace.'**
+  String get reminderBody5;
+
+  /// No description provided for @reminderBody6.
+  ///
+  /// In en, this message translates to:
+  /// **'Come as you are. Breathe in, breathe out.'**
+  String get reminderBody6;
+
+  /// Seven gentle notification messages, one per weekday (Monday first). No pressure, no mention of streaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Slow down for a little while. You have earned it.'**
+  String get reminderBody7;
+
+  /// Invitation card on Today, shown once after the first completed session.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind you every day at this time?'**
+  String get reminderInviteTitle;
+
+  /// No description provided for @reminderInviteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A soft nudge at {time}. You can change or turn it off in Profile.'**
+  String reminderInviteBody(String time);
+
+  /// No description provided for @reminderInviteYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, remind me'**
+  String get reminderInviteYes;
+
+  /// No description provided for @reminderInviteNo.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get reminderInviteNo;
 }
 
 class _AppLocalizationsDelegate

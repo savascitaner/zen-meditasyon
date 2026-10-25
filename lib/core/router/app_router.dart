@@ -12,6 +12,7 @@ import '../../features/onboarding/presentation/welcome_screen.dart';
 import '../../features/player/presentation/player_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/programs/presentation/programs_screen.dart';
+import '../../features/reminders/presentation/reminder_controller.dart';
 import '../../shared/widgets/app_scaffold_with_nav.dart';
 import 'onboarding_redirect.dart';
 import 'route_names.dart';
@@ -111,7 +112,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
     ],
   );
+  // Tapping a daily reminder opens the Today tab.
+  final reminderTaps = ref
+      .read(reminderSchedulerProvider)
+      .taps
+      .listen((_) => router.go(RouteNames.homePath));
   ref.onDispose(() {
+    reminderTaps.cancel();
     router.dispose();
     onboardingCompleted.dispose();
   });

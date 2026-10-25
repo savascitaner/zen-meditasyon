@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -10,6 +12,8 @@ import '../../content/domain/models/meditation.dart';
 import '../../content/presentation/providers/content_providers.dart';
 import '../../library/presentation/providers/library_providers.dart';
 import '../../player/presentation/player_providers.dart';
+import '../../reminders/presentation/reminder_controller.dart';
+import '../../reminders/presentation/reminder_invite_card.dart';
 import 'providers/home_providers.dart';
 import 'widgets/greeting_header.dart';
 import 'widgets/horizontal_meditation_strip.dart';
@@ -47,6 +51,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     if (state == AppLifecycleState.resumed) {
       ref.invalidate(practiceStatsProvider);
       ref.invalidate(todayRecommendationProvider);
+      // The time zone may have changed too, e.g. after travelling.
+      unawaited(ref.read(reminderControllerProvider.notifier).sync());
     }
   }
 
@@ -94,6 +100,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
               const SizedBox(height: AppSpacing.md),
               StatsRow(stats: stats),
             ],
+            gap,
+          ],
+          if (ref.watch(showReminderInviteProvider)) ...[
+            const ReminderInviteCard(),
             gap,
           ],
           if (recent.isNotEmpty) ...[
