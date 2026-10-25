@@ -108,5 +108,13 @@
   "experienceSomeTitle": "I've tried it a few times",
   "experienceSomeSubtitle": "I know the basics and want to keep going.",
   "experienceRegularTitle": "I practise regularly",
-  "experienceRegularSubtitle": "Meditation is already part of my routine."
+  "experienceRegularSubtitle": "Meditation is already part of my routine.",
+  "favoritesTitle": "My favorites",
+  "favoriteAdd": "Add to favorites",
+  "@favoriteAdd": { "description": "Heart button label (VoiceOver) when the meditation is not a favorite." },
+  "favoriteRemove": "Remove from favorites",
+  "@favoriteRemove": { "description": "Heart button label (VoiceOver) when the meditation is a favorite." },
+  "favoritesEmptyTitle": "No favorites yet",
+  "favoritesEmptyMessage": "Tap the heart on a meditation you'd like to come back to, and it will wait for you here.",
+  "favoritesEmptyAction": "Explore meditations"
 }

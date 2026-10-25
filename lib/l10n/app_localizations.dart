@@ -523,6 +523,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Meditation is already part of my routine.'**
   String get experienceRegularSubtitle;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My favorites'**
+  String get favoritesTitle;
+
+  /// Heart button label (VoiceOver) when the meditation is not a favorite.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favorites'**
+  String get favoriteAdd;
+
+  /// Heart button label (VoiceOver) when the meditation is a favorite.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get favoriteRemove;
+
+  /// No description provided for @favoritesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet'**
+  String get favoritesEmptyTitle;
+
+  /// No description provided for @favoritesEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart on a meditation you\'d like to come back to, and it will wait for you here.'**
+  String get favoritesEmptyMessage;
+
+  /// No description provided for @favoritesEmptyAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore meditations'**
+  String get favoritesEmptyAction;
 }
 
 class _AppLocalizationsDelegate

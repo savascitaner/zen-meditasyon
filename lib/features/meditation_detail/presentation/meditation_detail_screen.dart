@@ -12,6 +12,7 @@ import '../../../shared/widgets/error_state.dart';
 import '../../../shared/widgets/premium_badge.dart';
 import '../../content/domain/models/meditation.dart';
 import '../../content/presentation/providers/content_providers.dart';
+import '../../library/presentation/widgets/favorite_button.dart';
 
 /// Title, description and details of one meditation, with a start button.
 class MeditationDetailScreen extends ConsumerWidget {
@@ -25,7 +26,12 @@ class MeditationDetailScreen extends ConsumerWidget {
     final meditation = ref.watch(meditationByIdProvider(meditationId));
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          if (meditation.value != null)
+            FavoriteButton(meditationId: meditationId),
+        ],
+      ),
       body: meditation.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (_, _) => ErrorState(

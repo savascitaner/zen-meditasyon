@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/audio_handler.dart';
-import '../data/in_memory_practice_log_repository.dart';
+import '../../../core/l10n/locale_controller.dart';
+import '../data/local_practice_log_repository.dart';
 import '../domain/practice_log_repository.dart';
 
 /// Overridden in `main.dart` with the handler returned by `AudioService.init`
@@ -10,9 +11,9 @@ final audioHandlerProvider = Provider<MeditationAudioHandler>(
   (ref) => throw UnimplementedError('audioHandlerProvider not overridden'),
 );
 
-/// Görev 7 swaps this for a persistent repository.
+/// The practice history, kept on the device.
 final practiceLogRepositoryProvider = Provider<PracticeLogRepository>(
-  (ref) => InMemoryPracticeLogRepository(),
+  (ref) => LocalPracticeLogRepository(ref.watch(sharedPreferencesProvider)),
 );
 
 /// Overridden in tests to make `startedAt` predictable.

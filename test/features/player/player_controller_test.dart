@@ -5,13 +5,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
-import 'package:zen_meditation/features/player/data/in_memory_practice_log_repository.dart';
 import 'package:zen_meditation/features/player/domain/player_state.dart';
 import 'package:zen_meditation/features/player/presentation/player_controller.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 
 import '../../helpers/fake_audio_handler.dart';
 import '../../helpers/fake_content_repository.dart';
+import '../../helpers/in_memory_practice_log_repository.dart';
 
 final startTime = DateTime(2026, 10, 25, 9);
 

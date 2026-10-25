@@ -249,4 +249,23 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get experienceRegularSubtitle =>
       'Meditation is already part of my routine.';
+
+  @override
+  String get favoritesTitle => 'My favorites';
+
+  @override
+  String get favoriteAdd => 'Add to favorites';
+
+  @override
+  String get favoriteRemove => 'Remove from favorites';
+
+  @override
+  String get favoritesEmptyTitle => 'No favorites yet';
+
+  @override
+  String get favoritesEmptyMessage =>
+      'Tap the heart on a meditation you\'d like to come back to, and it will wait for you here.';
+
+  @override
+  String get favoritesEmptyAction => 'Explore meditations';
 }

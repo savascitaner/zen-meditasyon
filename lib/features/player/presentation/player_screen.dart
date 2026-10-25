@@ -11,6 +11,7 @@ import '../../../l10n/app_localizations.dart';
 import '../../../shared/extensions/localized_text_x.dart';
 import '../../../shared/widgets/cover_art.dart';
 import '../../../shared/widgets/empty_state.dart';
+import '../../library/presentation/widgets/favorite_button.dart';
 import '../domain/player_state.dart';
 import 'player_controller.dart';
 import 'session_complete_sheet.dart';
@@ -68,6 +69,10 @@ class PlayerScreen extends ConsumerWidget {
           tooltip: l10n.playerClose,
           onPressed: () => _close(context),
         ),
+        actions: [
+          if (state.meditation != null)
+            FavoriteButton(meditationId: meditationId),
+        ],
       ),
       body: switch (state.status) {
         PlayerStatus.loading => const Center(
