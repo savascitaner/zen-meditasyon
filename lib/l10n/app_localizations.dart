@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// Application name shown in the OS task switcher.
   ///
   /// In en, this message translates to:
-  /// **'Zen'**
+  /// **'Ensora'**
   String get appTitle;
 
   /// Bottom navigation label for the home tab.
@@ -367,6 +367,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Türkçe'**
   String get languageTurkish;
+
+  /// No description provided for @welcomeTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathe, settle, and find a little more calm each day.'**
+  String get welcomeTagline;
+
+  /// No description provided for @welcomeGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get welcomeGetStarted;
+
+  /// Small print on the welcome screen. Must not make medical claims.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensora supports everyday wellbeing. It isn\'t a substitute for professional care.'**
+  String get welcomeDisclaimer;
+
+  /// Progress label at the top of the onboarding survey.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {step} of {total}'**
+  String surveyStepOf(int step, int total);
+
+  /// No description provided for @surveyBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get surveyBack;
+
+  /// Skips the survey and opens the app.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip for now'**
+  String get surveySkip;
+
+  /// No description provided for @surveyContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get surveyContinue;
+
+  /// Last survey button; finishes onboarding and opens Explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Start exploring'**
+  String get surveyFinish;
+
+  /// No description provided for @surveyStressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How have you been feeling lately?'**
+  String get surveyStressTitle;
+
+  /// No description provided for @surveyStressSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'There\'s no right or wrong answer. This only helps us shape a gentle place to begin.'**
+  String get surveyStressSubtitle;
+
+  /// No description provided for @stressCalmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mostly calm'**
+  String get stressCalmTitle;
+
+  /// No description provided for @stressCalmSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Things feel fairly steady.'**
+  String get stressCalmSubtitle;
+
+  /// No description provided for @stressSlightlyTenseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A little tense'**
+  String get stressSlightlyTenseTitle;
+
+  /// No description provided for @stressSlightlyTenseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Some days feel busier than others.'**
+  String get stressSlightlyTenseSubtitle;
+
+  /// No description provided for @stressStressedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Often stressed'**
+  String get stressStressedTitle;
+
+  /// No description provided for @stressStressedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My mind is busy or restless much of the time.'**
+  String get stressStressedSubtitle;
+
+  /// No description provided for @stressOverwhelmedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Overwhelmed'**
+  String get stressOverwhelmedTitle;
+
+  /// No description provided for @stressOverwhelmedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'It has all felt like a lot lately.'**
+  String get stressOverwhelmedSubtitle;
+
+  /// No description provided for @surveyExperienceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How familiar are you with meditation?'**
+  String get surveyExperienceTitle;
+
+  /// No description provided for @surveyExperienceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Every starting point is a good one.'**
+  String get surveyExperienceSubtitle;
+
+  /// No description provided for @experienceNewcomerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m new to it'**
+  String get experienceNewcomerTitle;
+
+  /// No description provided for @experienceNewcomerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short, simple sessions are a good start.'**
+  String get experienceNewcomerSubtitle;
+
+  /// No description provided for @experienceSomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ve tried it a few times'**
+  String get experienceSomeTitle;
+
+  /// No description provided for @experienceSomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I know the basics and want to keep going.'**
+  String get experienceSomeSubtitle;
+
+  /// No description provided for @experienceRegularTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I practise regularly'**
+  String get experienceRegularTitle;
+
+  /// No description provided for @experienceRegularSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Meditation is already part of my routine.'**
+  String get experienceRegularSubtitle;
 }
 
 class _AppLocalizationsDelegate

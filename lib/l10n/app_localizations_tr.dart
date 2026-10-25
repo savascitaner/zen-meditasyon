@@ -10,7 +10,7 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'Zen';
+  String get appTitle => 'Ensora';
 
   @override
   String get navToday => 'Bugün';
@@ -160,4 +160,93 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get languageTurkish => 'Türkçe';
+
+  @override
+  String get welcomeTagline =>
+      'Nefes al, yavaşla ve her gün biraz daha sakinlik bul.';
+
+  @override
+  String get welcomeGetStarted => 'Başlayalım';
+
+  @override
+  String get welcomeDisclaimer =>
+      'Ensora gündelik iyi oluşuna destek olur; profesyonel desteğin yerini tutmaz.';
+
+  @override
+  String surveyStepOf(int step, int total) {
+    return 'Adım $step / $total';
+  }
+
+  @override
+  String get surveyBack => 'Geri';
+
+  @override
+  String get surveySkip => 'Şimdilik geç';
+
+  @override
+  String get surveyContinue => 'Devam et';
+
+  @override
+  String get surveyFinish => 'Keşfetmeye başla';
+
+  @override
+  String get surveyStressTitle => 'Son zamanlarda kendini nasıl hissediyorsun?';
+
+  @override
+  String get surveyStressSubtitle =>
+      'Doğru ya da yanlış cevap yok. Bu yalnızca sana nazik bir başlangıç hazırlamamıza yardımcı olur.';
+
+  @override
+  String get stressCalmTitle => 'Çoğunlukla sakin';
+
+  @override
+  String get stressCalmSubtitle => 'Her şey oldukça dengeli.';
+
+  @override
+  String get stressSlightlyTenseTitle => 'Biraz gergin';
+
+  @override
+  String get stressSlightlyTenseSubtitle =>
+      'Bazı günler diğerlerinden daha yoğun geçiyor.';
+
+  @override
+  String get stressStressedTitle => 'Sık sık stresli';
+
+  @override
+  String get stressStressedSubtitle =>
+      'Zihnim çoğu zaman meşgul ya da huzursuz.';
+
+  @override
+  String get stressOverwhelmedTitle => 'Bunalmış';
+
+  @override
+  String get stressOverwhelmedSubtitle =>
+      'Son zamanlarda her şey biraz fazla geldi.';
+
+  @override
+  String get surveyExperienceTitle => 'Meditasyona ne kadar aşinasın?';
+
+  @override
+  String get surveyExperienceSubtitle => 'Her başlangıç noktası güzeldir.';
+
+  @override
+  String get experienceNewcomerTitle => 'Yeni başlıyorum';
+
+  @override
+  String get experienceNewcomerSubtitle =>
+      'Kısa ve sade seanslar iyi bir başlangıç.';
+
+  @override
+  String get experienceSomeTitle => 'Birkaç kez denedim';
+
+  @override
+  String get experienceSomeSubtitle =>
+      'Temelleri biliyorum ve devam etmek istiyorum.';
+
+  @override
+  String get experienceRegularTitle => 'Düzenli pratik yapıyorum';
+
+  @override
+  String get experienceRegularSubtitle =>
+      'Meditasyon zaten rutinimin bir parçası.';
 }

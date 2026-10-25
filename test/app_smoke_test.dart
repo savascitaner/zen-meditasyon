@@ -4,13 +4,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zen_meditation/app.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
+import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
 
 Future<void> pumpApp(
   WidgetTester tester, {
   Map<String, Object> stored = const {},
   Locale device = const Locale('en'),
 }) async {
-  SharedPreferences.setMockInitialValues(stored);
+  SharedPreferences.setMockInitialValues({
+    LocalOnboardingRepository.completedKey: true,
+    ...stored,
+  });
   final prefs = await SharedPreferences.getInstance();
   await tester.pumpWidget(
     ProviderScope(
