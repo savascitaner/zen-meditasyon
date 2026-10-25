@@ -1,0 +1,1332 @@
+{
+  "categories": [
+    {
+      "id": "breath",
+      "title": {
+        "en": "Breath",
+        "tr": "Nefes"
+      },
+      "description": {
+        "en": "Short practices that use the breath as an anchor.",
+        "tr": "Nefesi çapa olarak kullanan kısa pratikler."
+      }
+    },
+    {
+      "id": "sleep",
+      "title": {
+        "en": "Sleep",
+        "tr": "Uyku"
+      },
+      "description": {
+        "en": "Slow, quiet sessions for winding down at night.",
+        "tr": "Gece gevşemek için yavaş ve sessiz seanslar."
+      }
+    },
+    {
+      "id": "stress",
+      "title": {
+        "en": "Stress",
+        "tr": "Stres"
+      },
+      "description": {
+        "en": "Pauses for busy days and full minds.",
+        "tr": "Yoğun günler ve dolu zihinler için molalar."
+      }
+    },
+    {
+      "id": "anxiety",
+      "title": {
+        "en": "Anxiety",
+        "tr": "Kaygı"
+      },
+      "description": {
+        "en": "Gentle grounding when worry feels loud.",
+        "tr": "Endişe yükseldiğinde nazik bir topraklanma."
+      }
+    },
+    {
+      "id": "focus",
+      "title": {
+        "en": "Focus",
+        "tr": "Odak"
+      },
+      "description": {
+        "en": "Practices for settling attention on one thing.",
+        "tr": "Dikkati tek bir şeye yerleştirmek için pratikler."
+      }
+    },
+    {
+      "id": "loving-kindness",
+      "title": {
+        "en": "Loving-kindness",
+        "tr": "Sevgi-şefkat"
+      },
+      "description": {
+        "en": "Warm wishes for yourself and others.",
+        "tr": "Kendine ve başkalarına sıcak dilekler."
+      }
+    },
+    {
+      "id": "body-scan",
+      "title": {
+        "en": "Body scan",
+        "tr": "Beden taraması"
+      },
+      "description": {
+        "en": "Moving attention slowly through the body.",
+        "tr": "Dikkati bedende yavaşça gezdirmek."
+      }
+    },
+    {
+      "id": "zen",
+      "title": {
+        "en": "Zen",
+        "tr": "Zen"
+      },
+      "description": {
+        "en": "Sitting, counting and open questions in the Zen tradition.",
+        "tr": "Zen geleneğinden oturma, sayma ve açık sorular."
+      }
+    },
+    {
+      "id": "walking",
+      "title": {
+        "en": "Walking",
+        "tr": "Yürüyüş"
+      },
+      "description": {
+        "en": "Meditation in motion, one step at a time.",
+        "tr": "Hareket hâlinde meditasyon, her seferinde bir adım."
+      }
+    }
+  ],
+  "meditations": [
+    {
+      "id": "breath-space-3",
+      "title": {
+        "en": "Three-minute breathing space",
+        "tr": "Üç dakikalık nefes alanı"
+      },
+      "description": {
+        "en": "A short pause to notice how you are, follow a few breaths and widen your attention again.",
+        "tr": "Nasıl olduğunu fark etmek, birkaç nefesi izlemek ve dikkatini yeniden genişletmek için kısa bir mola."
+      },
+      "categoryIds": [
+        "breath",
+        "anxiety"
+      ],
+      "durationMinutes": 3,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Elif",
+      "isPremium": false,
+      "tags": [
+        "beginner",
+        "quick"
+      ]
+    },
+    {
+      "id": "box-breathing-5",
+      "title": {
+        "en": "Box breathing",
+        "tr": "Kutu nefesi"
+      },
+      "description": {
+        "en": "Breathe in, hold, breathe out and hold again, each for a slow count of four.",
+        "tr": "Nefes al, tut, ver ve yeniden tut; her biri dörde kadar yavaşça sayarak."
+      },
+      "categoryIds": [
+        "breath",
+        "stress",
+        "focus"
+      ],
+      "durationMinutes": 5,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": false,
+      "tags": [
+        "beginner",
+        "work"
+      ]
+    },
+    {
+      "id": "night-breath-30",
+      "title": {
+        "en": "Long night breath",
+        "tr": "Uzun gece nefesi"
+      },
+      "description": {
+        "en": "A slow, guided breath that gradually fades into silence for falling asleep.",
+        "tr": "Uykuya dalarken yavaş yavaş sessizliğe karışan, yönlendirmeli bir nefes çalışması."
+      },
+      "categoryIds": [
+        "sleep",
+        "breath"
+      ],
+      "durationMinutes": 30,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Maya",
+      "isPremium": true,
+      "tags": [
+        "night",
+        "long"
+      ]
+    },
+    {
+      "id": "sleep-wind-down-10",
+      "title": {
+        "en": "Winding down",
+        "tr": "Güne veda"
+      },
+      "description": {
+        "en": "Let the day settle: soften the body, slow the breath and let thoughts pass by.",
+        "tr": "Günün durulmasına izin ver: bedenini yumuşat, nefesini yavaşlat, düşüncelerin geçip gitsin."
+      },
+      "categoryIds": [
+        "sleep"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Maya",
+      "isPremium": false,
+      "tags": [
+        "night",
+        "beginner"
+      ]
+    },
+    {
+      "id": "sleep-body-release-20",
+      "title": {
+        "en": "Releasing the body for sleep",
+        "tr": "Uyku için bedeni bırakmak"
+      },
+      "description": {
+        "en": "Lying down, release each part of the body in turn, from the feet to the face.",
+        "tr": "Uzanarak bedeninin her bölümünü sırayla bırak; ayaklardan yüzüne kadar."
+      },
+      "categoryIds": [
+        "sleep",
+        "body-scan"
+      ],
+      "durationMinutes": 20,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Maya",
+      "isPremium": true,
+      "tags": [
+        "night"
+      ]
+    },
+    {
+      "id": "stress-pause-5",
+      "title": {
+        "en": "A pause between tasks",
+        "tr": "İki iş arasında bir mola"
+      },
+      "description": {
+        "en": "Step away for five minutes, notice what is here and return a little lighter.",
+        "tr": "Beş dakika ara ver, şu anda olanı fark et ve biraz daha hafif dön."
+      },
+      "categoryIds": [
+        "stress"
+      ],
+      "durationMinutes": 5,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": false,
+      "tags": [
+        "work",
+        "quick"
+      ]
+    },
+    {
+      "id": "workday-reset-10",
+      "title": {
+        "en": "Midday reset",
+        "tr": "Gün ortası tazelenme"
+      },
+      "description": {
+        "en": "A short check-in for the middle of a busy day: shoulders, jaw, breath and next step.",
+        "tr": "Yoğun bir günün ortası için kısa bir yoklama: omuzlar, çene, nefes ve sıradaki adım."
+      },
+      "categoryIds": [
+        "stress",
+        "focus"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": true,
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "grounding-5",
+      "title": {
+        "en": "Five senses grounding",
+        "tr": "Beş duyuyla topraklanma"
+      },
+      "description": {
+        "en": "Name what you can see, hear and feel right now to come back to the present.",
+        "tr": "Şu an görebildiğin, duyabildiğin ve hissedebildiğin şeyleri adlandırarak ana dön."
+      },
+      "categoryIds": [
+        "anxiety"
+      ],
+      "durationMinutes": 5,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Elif",
+      "isPremium": false,
+      "tags": [
+        "beginner",
+        "quick"
+      ]
+    },
+    {
+      "id": "soft-landing-10",
+      "title": {
+        "en": "Soft landing",
+        "tr": "Yumuşak iniş"
+      },
+      "description": {
+        "en": "When worry is loud, make room for it and let a longer out-breath steady you.",
+        "tr": "Endişe yükseldiğinde ona yer aç ve uzayan bir nefes verişinin seni dengelemesine izin ver."
+      },
+      "categoryIds": [
+        "anxiety",
+        "breath"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Elif",
+      "isPremium": true,
+      "tags": []
+    },
+    {
+      "id": "single-task-10",
+      "title": {
+        "en": "One thing at a time",
+        "tr": "Her seferinde tek şey"
+      },
+      "description": {
+        "en": "Train attention to rest on one object and to return gently whenever it wanders.",
+        "tr": "Dikkatini tek bir nesnede tutmayı ve dağıldığında nazikçe geri getirmeyi çalış."
+      },
+      "categoryIds": [
+        "focus"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": false,
+      "tags": [
+        "work",
+        "beginner"
+      ]
+    },
+    {
+      "id": "deep-work-20",
+      "title": {
+        "en": "Before deep work",
+        "tr": "Derin çalışmadan önce"
+      },
+      "description": {
+        "en": "Clear the desk of the mind before a long stretch of focused work.",
+        "tr": "Uzun ve odaklı bir çalışmadan önce zihnin masasını topla."
+      },
+      "categoryIds": [
+        "focus"
+      ],
+      "durationMinutes": 20,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": true,
+      "tags": [
+        "work",
+        "long"
+      ]
+    },
+    {
+      "id": "loving-kindness-10",
+      "title": {
+        "en": "Loving-kindness",
+        "tr": "Sevgi-şefkat"
+      },
+      "description": {
+        "en": "Offer simple, warm wishes to yourself, to someone close and then to everyone.",
+        "tr": "Önce kendine, sonra yakın birine, ardından herkese sade ve sıcak dilekler gönder."
+      },
+      "categoryIds": [
+        "loving-kindness"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Elif",
+      "isPremium": false,
+      "tags": [
+        "beginner"
+      ]
+    },
+    {
+      "id": "self-compassion-20",
+      "title": {
+        "en": "A kind voice inside",
+        "tr": "İçerideki nazik ses"
+      },
+      "description": {
+        "en": "Meet a hard moment the way you would meet a good friend: with patience and warmth.",
+        "tr": "Zor bir anı iyi bir dostu karşılar gibi karşıla: sabırla ve sıcaklıkla."
+      },
+      "categoryIds": [
+        "loving-kindness",
+        "stress"
+      ],
+      "durationMinutes": 20,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Elif",
+      "isPremium": true,
+      "tags": []
+    },
+    {
+      "id": "body-scan-10",
+      "title": {
+        "en": "Short body scan",
+        "tr": "Kısa beden taraması"
+      },
+      "description": {
+        "en": "Move attention from head to toe and simply notice what each area feels like.",
+        "tr": "Dikkatini baştan ayağa gezdir ve her bölgenin nasıl hissettiğini yalnızca fark et."
+      },
+      "categoryIds": [
+        "body-scan"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Maya",
+      "isPremium": false,
+      "tags": [
+        "beginner"
+      ]
+    },
+    {
+      "id": "body-scan-30",
+      "title": {
+        "en": "Full body scan",
+        "tr": "Tam beden taraması"
+      },
+      "description": {
+        "en": "An unhurried journey through the whole body, suitable before sleep.",
+        "tr": "Bütün bedende acelesiz bir yolculuk; uykudan önce de uygun."
+      },
+      "categoryIds": [
+        "body-scan",
+        "sleep"
+      ],
+      "durationMinutes": 30,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Maya",
+      "isPremium": true,
+      "tags": [
+        "long",
+        "night"
+      ]
+    },
+    {
+      "id": "zen-sitting-5",
+      "title": {
+        "en": "Just sitting",
+        "tr": "Sadece oturmak"
+      },
+      "description": {
+        "en": "Find a stable posture and sit, without trying to reach anything.",
+        "tr": "Sağlam bir duruş bul ve otur; hiçbir şeye ulaşmaya çalışmadan."
+      },
+      "categoryIds": [
+        "zen"
+      ],
+      "durationMinutes": 5,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Kenji",
+      "isPremium": false,
+      "tags": [
+        "beginner",
+        "sitting"
+      ]
+    },
+    {
+      "id": "zen-counting-10",
+      "title": {
+        "en": "Counting breaths",
+        "tr": "Nefesleri saymak"
+      },
+      "description": {
+        "en": "Count each out-breath from one to ten, and begin again at one whenever you lose count.",
+        "tr": "Her nefes verişi birden ona kadar say; sayıyı kaçırdığında yeniden birden başla."
+      },
+      "categoryIds": [
+        "zen",
+        "breath"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Kenji",
+      "isPremium": false,
+      "tags": [
+        "sitting",
+        "counting"
+      ]
+    },
+    {
+      "id": "zen-open-question-20",
+      "title": {
+        "en": "Sitting with a question",
+        "tr": "Bir soruyla oturmak"
+      },
+      "description": {
+        "en": "Hold a simple, koan-like question such as \"What is this?\" without looking for an answer.",
+        "tr": "\"Bu nedir?\" gibi koan benzeri sade bir soruyu, cevap aramadan taşı."
+      },
+      "categoryIds": [
+        "zen"
+      ],
+      "durationMinutes": 20,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Kenji",
+      "isPremium": true,
+      "tags": [
+        "sitting"
+      ]
+    },
+    {
+      "id": "walking-10",
+      "title": {
+        "en": "Mindful walk",
+        "tr": "Farkındalıkla yürüyüş"
+      },
+      "description": {
+        "en": "Walk slowly and feel each step: lifting, moving and placing the foot.",
+        "tr": "Yavaş yürü ve her adımı hisset: ayağı kaldırmak, ilerletmek ve yere koymak."
+      },
+      "categoryIds": [
+        "walking"
+      ],
+      "durationMinutes": 10,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": false,
+      "tags": [
+        "beginner",
+        "outdoors"
+      ]
+    },
+    {
+      "id": "walking-commute-20",
+      "title": {
+        "en": "The walk home",
+        "tr": "Eve dönüş yürüyüşü"
+      },
+      "description": {
+        "en": "Turn the walk after work into a gentle transition from the day to the evening.",
+        "tr": "İş sonrası yürüyüşü günden akşama nazik bir geçişe dönüştür."
+      },
+      "categoryIds": [
+        "walking",
+        "stress"
+      ],
+      "durationMinutes": 20,
+      "audioSource": "assets/audio/sample.mp3",
+      "coverImage": null,
+      "narrator": "Can",
+      "isPremium": true,
+      "tags": [
+        "outdoors",
+        "work"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "id": "intro-to-zen",
+      "title": {
+        "en": "Introduction to Zen",
+        "tr": "Zen'e giriş"
+      },
+      "description": {
+        "en": "Thirty days of sitting, breathing and counting. A simple start, a few minutes a day.",
+        "tr": "Otuz gün boyunca oturma, nefes ve sayma. Günde birkaç dakikalık sade bir başlangıç."
+      },
+      "totalDays": 30,
+      "days": [
+        {
+          "dayNumber": 1,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Today, just sit. Five minutes is enough.",
+            "tr": "Bugün sadece otur. Beş dakika yeterli."
+          }
+        },
+        {
+          "dayNumber": 2,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Notice the shape of your breath without changing it much.",
+            "tr": "Nefesinin biçimini fazla değiştirmeden fark et."
+          }
+        },
+        {
+          "dayNumber": 3,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Let your posture be stable, not stiff.",
+            "tr": "Duruşun sağlam olsun ama katı değil."
+          }
+        },
+        {
+          "dayNumber": 4,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Lost the count? That is part of the practice. Start again at one.",
+            "tr": "Sayıyı mı kaçırdın? Bu da pratiğin parçası. Birden yeniden başla."
+          }
+        },
+        {
+          "dayNumber": 5,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Take the practice outside: every step is a place to arrive.",
+            "tr": "Pratiği dışarı taşı: her adım varılacak bir yer."
+          }
+        },
+        {
+          "dayNumber": 6,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Counting again. Be curious about where the mind goes.",
+            "tr": "Yine sayıyoruz. Zihnin nereye gittiğini merak et."
+          }
+        },
+        {
+          "dayNumber": 7,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "A week of sitting. Rest in the body today.",
+            "tr": "Bir haftalık oturuş. Bugün bedende dinlen."
+          }
+        },
+        {
+          "dayNumber": 8,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Begin the second week the same way you began the first: simply.",
+            "tr": "İkinci haftaya ilkine başladığın gibi başla: sade."
+          }
+        },
+        {
+          "dayNumber": 9,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Breathe in four, hold four, out four, hold four.",
+            "tr": "Dörtte al, dörtte tut, dörtte ver, dörtte tut."
+          }
+        },
+        {
+          "dayNumber": 10,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Sit at the same time as yesterday, if you can.",
+            "tr": "Mümkünse dünkü saatte otur."
+          }
+        },
+        {
+          "dayNumber": 11,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Let the counting become lighter, almost a whisper.",
+            "tr": "Saymak hafiflesin, neredeyse bir fısıltı gibi."
+          }
+        },
+        {
+          "dayNumber": 12,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Walk a little slower than feels natural.",
+            "tr": "Doğal gelenden biraz daha yavaş yürü."
+          }
+        },
+        {
+          "dayNumber": 13,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Notice sounds coming and going while you count.",
+            "tr": "Sayarken gelip giden sesleri fark et."
+          }
+        },
+        {
+          "dayNumber": 14,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Two weeks in. Thank yourself for showing up.",
+            "tr": "İki hafta oldu. Geldiğin için kendine teşekkür et."
+          }
+        },
+        {
+          "dayNumber": 15,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Halfway. Sit without expecting this day to be special.",
+            "tr": "Yolun yarısı. Bu günün özel olmasını beklemeden otur."
+          }
+        },
+        {
+          "dayNumber": 16,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "If the mind is busy, let the breath be your anchor.",
+            "tr": "Zihin meşgulse nefes çapan olsun."
+          }
+        },
+        {
+          "dayNumber": 17,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Feel the weight of the body resting on the cushion or chair.",
+            "tr": "Bedenin minder ya da sandalye üzerindeki ağırlığını hisset."
+          }
+        },
+        {
+          "dayNumber": 18,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Count to ten, and when you reach ten, enjoy the small pause.",
+            "tr": "Ona kadar say ve ona vardığında o küçük duraklamanın tadını çıkar."
+          }
+        },
+        {
+          "dayNumber": 19,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "On your walk, feel the ground meeting each foot.",
+            "tr": "Yürürken yerin her ayağını karşıladığını hisset."
+          }
+        },
+        {
+          "dayNumber": 20,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Sit with whatever mood you have today, as it is.",
+            "tr": "Bugünkü ruh hâlinle, olduğu gibi otur."
+          }
+        },
+        {
+          "dayNumber": 21,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Three weeks. Scan the body and notice what has changed, if anything.",
+            "tr": "Üç hafta. Bedeni tara ve bir şey değiştiyse fark et."
+          }
+        },
+        {
+          "dayNumber": 22,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Begin again. In Zen, every sitting is a first sitting.",
+            "tr": "Yeniden başla. Zen'de her oturuş ilk oturuştur."
+          }
+        },
+        {
+          "dayNumber": 23,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Let the breath be smooth and quiet.",
+            "tr": "Nefesin akıcı ve sessiz olsun."
+          }
+        },
+        {
+          "dayNumber": 24,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Try sitting a little longer after the audio ends.",
+            "tr": "Ses bittikten sonra biraz daha oturmayı dene."
+          }
+        },
+        {
+          "dayNumber": 25,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Counting with less effort today.",
+            "tr": "Bugün daha az çabayla say."
+          }
+        },
+        {
+          "dayNumber": 26,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Walk as if you have nowhere else to be.",
+            "tr": "Başka hiçbir yere yetişmen gerekmiyormuş gibi yürü."
+          }
+        },
+        {
+          "dayNumber": 27,
+          "meditationId": "zen-counting-10",
+          "note": {
+            "en": "Notice the moment just before you lose the count.",
+            "tr": "Sayıyı kaçırmadan hemen önceki anı fark et."
+          }
+        },
+        {
+          "dayNumber": 28,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Rest in the body. Nothing to fix, only to notice.",
+            "tr": "Bedende dinlen. Düzeltilecek bir şey yok, yalnızca fark edilecek."
+          }
+        },
+        {
+          "dayNumber": 29,
+          "meditationId": "zen-sitting-5",
+          "note": {
+            "en": "Second to last day. Sit simply, as on day one.",
+            "tr": "Sondan bir önceki gün. İlk günkü gibi sade otur."
+          }
+        },
+        {
+          "dayNumber": 30,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Day thirty. Choose one small practice to keep.",
+            "tr": "Otuzuncu gün. Sürdürmek için küçük bir pratik seç."
+          }
+        }
+      ],
+      "isPremium": false
+    },
+    {
+      "id": "sleep-routine",
+      "title": {
+        "en": "Sleep routine",
+        "tr": "Uyku düzeni"
+      },
+      "description": {
+        "en": "Build a calm evening routine over thirty nights, with short practices before bed.",
+        "tr": "Otuz gece boyunca, yatmadan önce kısa pratiklerle sakin bir akşam rutini oluştur."
+      },
+      "totalDays": 30,
+      "days": [
+        {
+          "dayNumber": 1,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Choose a regular time to start winding down tonight.",
+            "tr": "Bu gece gevşemeye başlamak için düzenli bir saat seç."
+          }
+        },
+        {
+          "dayNumber": 2,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Dim the lights a little before you begin.",
+            "tr": "Başlamadan önce ışıkları biraz kıs."
+          }
+        },
+        {
+          "dayNumber": 3,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "A few slow breaths can be a signal that the day is ending.",
+            "tr": "Birkaç yavaş nefes günün bittiğine dair bir işaret olabilir."
+          }
+        },
+        {
+          "dayNumber": 4,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Put the phone out of reach after this session.",
+            "tr": "Bu seanstan sonra telefonu uzanamayacağın bir yere koy."
+          }
+        },
+        {
+          "dayNumber": 5,
+          "meditationId": "soft-landing-10",
+          "note": {
+            "en": "If thoughts keep coming, let them pass like clouds.",
+            "tr": "Düşünceler gelmeye devam ederse bulutlar gibi geçip gitsinler."
+          }
+        },
+        {
+          "dayNumber": 6,
+          "meditationId": "loving-kindness-10",
+          "note": {
+            "en": "End the day with a kind wish for yourself.",
+            "tr": "Günü kendine nazik bir dilekle bitir."
+          }
+        },
+        {
+          "dayNumber": 7,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "One week. Notice what helps you settle in the evening.",
+            "tr": "Bir hafta oldu. Akşamları sakinleşmene neyin yardım ettiğini fark et."
+          }
+        },
+        {
+          "dayNumber": 8,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Try to wake up at a similar time as yesterday.",
+            "tr": "Dünküne yakın bir saatte uyanmaya çalış."
+          }
+        },
+        {
+          "dayNumber": 9,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Let the jaw and shoulders soften.",
+            "tr": "Çene ve omuzlarının yumuşamasına izin ver."
+          }
+        },
+        {
+          "dayNumber": 10,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Keep the room cool and quiet if you can.",
+            "tr": "Mümkünse odayı serin ve sessiz tut."
+          }
+        },
+        {
+          "dayNumber": 11,
+          "meditationId": "soft-landing-10",
+          "note": {
+            "en": "No need to fall asleep during the practice. Just rest.",
+            "tr": "Pratik sırasında uykuya dalman gerekmiyor. Sadece dinlen."
+          }
+        },
+        {
+          "dayNumber": 12,
+          "meditationId": "loving-kindness-10",
+          "note": {
+            "en": "A longer out-breath can feel calming.",
+            "tr": "Uzayan bir nefes verişi sakinleştirici gelebilir."
+          }
+        },
+        {
+          "dayNumber": 13,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Think of one good moment from today.",
+            "tr": "Bugünden güzel bir anı düşün."
+          }
+        },
+        {
+          "dayNumber": 14,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Two weeks. Be patient with nights that feel restless.",
+            "tr": "İki hafta oldu. Huzursuz geçen gecelere karşı sabırlı ol."
+          }
+        },
+        {
+          "dayNumber": 15,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Halfway. Keep the routine simple.",
+            "tr": "Yolun yarısı. Rutini sade tut."
+          }
+        },
+        {
+          "dayNumber": 16,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Let the bed be a place for rest, not for work.",
+            "tr": "Yatak çalışmanın değil dinlenmenin yeri olsun."
+          }
+        },
+        {
+          "dayNumber": 17,
+          "meditationId": "soft-landing-10",
+          "note": {
+            "en": "Breathe in four, out six.",
+            "tr": "Dörtte al, altıda ver."
+          }
+        },
+        {
+          "dayNumber": 18,
+          "meditationId": "loving-kindness-10",
+          "note": {
+            "en": "If you wake at night, a few slow breaths are enough.",
+            "tr": "Gece uyanırsan birkaç yavaş nefes yeterli."
+          }
+        },
+        {
+          "dayNumber": 19,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Notice the weight of the blanket on your body.",
+            "tr": "Örtünün bedenindeki ağırlığını fark et."
+          }
+        },
+        {
+          "dayNumber": 20,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Send a warm wish to someone you love.",
+            "tr": "Sevdiğin birine sıcak bir dilek gönder."
+          }
+        },
+        {
+          "dayNumber": 21,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Three weeks. Which part of the routine feels natural now?",
+            "tr": "Üç hafta. Rutinin hangi kısmı artık doğal geliyor?"
+          }
+        },
+        {
+          "dayNumber": 22,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "A light evening meal can make the night easier.",
+            "tr": "Hafif bir akşam yemeği geceyi kolaylaştırabilir."
+          }
+        },
+        {
+          "dayNumber": 23,
+          "meditationId": "soft-landing-10",
+          "note": {
+            "en": "Let the body grow heavy and warm.",
+            "tr": "Bedenin ağırlaşsın ve ısınsın."
+          }
+        },
+        {
+          "dayNumber": 24,
+          "meditationId": "loving-kindness-10",
+          "note": {
+            "en": "Box breathing, slower than usual.",
+            "tr": "Kutu nefesi, her zamankinden yavaş."
+          }
+        },
+        {
+          "dayNumber": 25,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Let go of the day, one breath at a time.",
+            "tr": "Günü her nefeste biraz daha bırak."
+          }
+        },
+        {
+          "dayNumber": 26,
+          "meditationId": "body-scan-10",
+          "note": {
+            "en": "Make room for worries, then put them aside until morning.",
+            "tr": "Endişelerine yer aç, sonra onları sabaha kadar bir kenara bırak."
+          }
+        },
+        {
+          "dayNumber": 27,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Be kind to yourself about the nights that did not go well.",
+            "tr": "İyi geçmeyen geceler için kendine nazik ol."
+          }
+        },
+        {
+          "dayNumber": 28,
+          "meditationId": "sleep-wind-down-10",
+          "note": {
+            "en": "Notice how your evenings have changed this month.",
+            "tr": "Bu ay akşamlarının nasıl değiştiğini fark et."
+          }
+        },
+        {
+          "dayNumber": 29,
+          "meditationId": "soft-landing-10",
+          "note": {
+            "en": "Second to last night. Keep it simple.",
+            "tr": "Sondan bir önceki gece. Sade tut."
+          }
+        },
+        {
+          "dayNumber": 30,
+          "meditationId": "loving-kindness-10",
+          "note": {
+            "en": "Day thirty. Keep the parts of the routine that helped you.",
+            "tr": "Otuzuncu gün. Rutinin sana iyi gelen kısımlarını sürdür."
+          }
+        }
+      ],
+      "isPremium": true
+    },
+    {
+      "id": "stress-and-work",
+      "title": {
+        "en": "Stress and work",
+        "tr": "Stres ve iş"
+      },
+      "description": {
+        "en": "Small, practical pauses for the workday, one each day for thirty days.",
+        "tr": "İş günü için küçük ve pratik molalar; otuz gün boyunca her gün bir tane."
+      },
+      "totalDays": 30,
+      "days": [
+        {
+          "dayNumber": 1,
+          "meditationId": "stress-pause-5",
+          "note": {
+            "en": "Start with five minutes before opening your inbox.",
+            "tr": "E-postalarını açmadan önce beş dakikayla başla."
+          }
+        },
+        {
+          "dayNumber": 2,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Use box breathing before a meeting.",
+            "tr": "Bir toplantıdan önce kutu nefesini kullan."
+          }
+        },
+        {
+          "dayNumber": 3,
+          "meditationId": "single-task-10",
+          "note": {
+            "en": "Pick one task and give it your full attention.",
+            "tr": "Bir iş seç ve tüm dikkatini ona ver."
+          }
+        },
+        {
+          "dayNumber": 4,
+          "meditationId": "grounding-5",
+          "note": {
+            "en": "When the day feels rushed, name five things you can see.",
+            "tr": "Gün aceleli hissettirdiğinde görebildiğin beş şeyi say."
+          }
+        },
+        {
+          "dayNumber": 5,
+          "meditationId": "workday-reset-10",
+          "note": {
+            "en": "Check in at midday: shoulders, jaw, breath.",
+            "tr": "Gün ortasında kendini yokla: omuzlar, çene, nefes."
+          }
+        },
+        {
+          "dayNumber": 6,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Take a short walk without your phone.",
+            "tr": "Telefonsuz kısa bir yürüyüş yap."
+          }
+        },
+        {
+          "dayNumber": 7,
+          "meditationId": "stress-pause-5",
+          "note": {
+            "en": "One week. Notice when stress tends to rise during your day.",
+            "tr": "Bir hafta oldu. Gün içinde stresin ne zaman yükseldiğini fark et."
+          }
+        },
+        {
+          "dayNumber": 8,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Pause between two tasks today, even for one breath.",
+            "tr": "Bugün iki iş arasında, tek bir nefeslik bile olsa dur."
+          }
+        },
+        {
+          "dayNumber": 9,
+          "meditationId": "single-task-10",
+          "note": {
+            "en": "Breathe slowly before you reply to a difficult message.",
+            "tr": "Zor bir mesaja cevap vermeden önce yavaşça nefes al."
+          }
+        },
+        {
+          "dayNumber": 10,
+          "meditationId": "grounding-5",
+          "note": {
+            "en": "Close tabs you do not need right now.",
+            "tr": "Şu an ihtiyacın olmayan sekmeleri kapat."
+          }
+        },
+        {
+          "dayNumber": 11,
+          "meditationId": "workday-reset-10",
+          "note": {
+            "en": "Feel your feet on the floor while you work.",
+            "tr": "Çalışırken ayaklarının yerdeki temasını hisset."
+          }
+        },
+        {
+          "dayNumber": 12,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Notice how your body feels after a long stretch at the screen.",
+            "tr": "Ekran başında uzun bir süreden sonra bedeninin nasıl hissettiğini fark et."
+          }
+        },
+        {
+          "dayNumber": 13,
+          "meditationId": "stress-pause-5",
+          "note": {
+            "en": "Walk to get water, slowly.",
+            "tr": "Su almaya yavaşça yürü."
+          }
+        },
+        {
+          "dayNumber": 14,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Two weeks. What small pause works best for you?",
+            "tr": "İki hafta oldu. Senin için en iyi işleyen küçük mola hangisi?"
+          }
+        },
+        {
+          "dayNumber": 15,
+          "meditationId": "single-task-10",
+          "note": {
+            "en": "Halfway. Be gentle with yourself on busy days.",
+            "tr": "Yolun yarısı. Yoğun günlerde kendine nazik ol."
+          }
+        },
+        {
+          "dayNumber": 16,
+          "meditationId": "grounding-5",
+          "note": {
+            "en": "Before lunch, take three slow breaths.",
+            "tr": "Öğle yemeğinden önce üç yavaş nefes al."
+          }
+        },
+        {
+          "dayNumber": 17,
+          "meditationId": "workday-reset-10",
+          "note": {
+            "en": "Do one thing at a time for the next hour.",
+            "tr": "Önümüzdeki bir saat boyunca her seferinde tek bir iş yap."
+          }
+        },
+        {
+          "dayNumber": 18,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Notice the moment you start to rush.",
+            "tr": "Acele etmeye başladığın anı fark et."
+          }
+        },
+        {
+          "dayNumber": 19,
+          "meditationId": "stress-pause-5",
+          "note": {
+            "en": "Let the shoulders drop away from the ears.",
+            "tr": "Omuzların kulaklarından uzaklaşsın."
+          }
+        },
+        {
+          "dayNumber": 20,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "Walk part of the way home, if you can.",
+            "tr": "Mümkünse eve dönüş yolunun bir kısmını yürü."
+          }
+        },
+        {
+          "dayNumber": 21,
+          "meditationId": "single-task-10",
+          "note": {
+            "en": "Three weeks. Which practice do you reach for most?",
+            "tr": "Üç hafta. En çok hangi pratiğe başvuruyorsun?"
+          }
+        },
+        {
+          "dayNumber": 22,
+          "meditationId": "grounding-5",
+          "note": {
+            "en": "Set a clear end time for work today.",
+            "tr": "Bugün iş için net bir bitiş saati belirle."
+          }
+        },
+        {
+          "dayNumber": 23,
+          "meditationId": "workday-reset-10",
+          "note": {
+            "en": "A slow breath can make space before you answer.",
+            "tr": "Yavaş bir nefes cevap vermeden önce alan açabilir."
+          }
+        },
+        {
+          "dayNumber": 24,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Give your full attention to one conversation.",
+            "tr": "Tek bir sohbete tüm dikkatini ver."
+          }
+        },
+        {
+          "dayNumber": 25,
+          "meditationId": "stress-pause-5",
+          "note": {
+            "en": "Ground yourself through sounds around you.",
+            "tr": "Etrafındaki seslerle kendini topraklan."
+          }
+        },
+        {
+          "dayNumber": 26,
+          "meditationId": "box-breathing-5",
+          "note": {
+            "en": "A midday reset, before the afternoon begins.",
+            "tr": "Öğleden sonra başlamadan önce bir gün ortası tazelenmesi."
+          }
+        },
+        {
+          "dayNumber": 27,
+          "meditationId": "single-task-10",
+          "note": {
+            "en": "Leave work at work: walk it off.",
+            "tr": "İşi işte bırak: yürüyerek geride bırak."
+          }
+        },
+        {
+          "dayNumber": 28,
+          "meditationId": "grounding-5",
+          "note": {
+            "en": "Notice what has felt lighter this month.",
+            "tr": "Bu ay neyin daha hafif hissettirdiğini fark et."
+          }
+        },
+        {
+          "dayNumber": 29,
+          "meditationId": "workday-reset-10",
+          "note": {
+            "en": "Second to last day. Pause before each new task.",
+            "tr": "Sondan bir önceki gün. Her yeni işten önce dur."
+          }
+        },
+        {
+          "dayNumber": 30,
+          "meditationId": "walking-10",
+          "note": {
+            "en": "Day thirty. Choose one pause to keep in your workday.",
+            "tr": "Otuzuncu gün. İş gününde sürdüreceğin bir mola seç."
+          }
+        }
+      ],
+      "isPremium": true
+    }
+  ]
+}
