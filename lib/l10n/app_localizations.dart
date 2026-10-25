@@ -128,12 +128,6 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get navProfile;
 
-  /// No description provided for @homePlaceholder.
-  ///
-  /// In en, this message translates to:
-  /// **'Your daily practice will appear here.'**
-  String get homePlaceholder;
-
   /// No description provided for @programsPlaceholder.
   ///
   /// In en, this message translates to:
@@ -559,6 +553,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Explore meditations'**
   String get favoritesEmptyAction;
+
+  /// No description provided for @greetingMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning'**
+  String get greetingMorning;
+
+  /// No description provided for @greetingAfternoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon'**
+  String get greetingAfternoon;
+
+  /// No description provided for @greetingEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening'**
+  String get greetingEvening;
+
+  /// No description provided for @recommendationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested for today'**
+  String get recommendationLabel;
+
+  /// Current streak of practice days.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day in a row} other{{count} days in a row}}'**
+  String streakDays(int count);
+
+  /// No description provided for @streakRestart.
+  ///
+  /// In en, this message translates to:
+  /// **'A good day to begin again.'**
+  String get streakRestart;
+
+  /// No description provided for @streakInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first session can start today.'**
+  String get streakInvite;
+
+  /// Longest streak so far.
+  ///
+  /// In en, this message translates to:
+  /// **'Your longest run: {count, plural, =1{1 day} other{{count} days}}'**
+  String streakLongest(int count);
+
+  /// Screen reader text for the seven weekly dots.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No practice yet this week} =1{This week you practised 1 day} other{This week you practised {count} days}}'**
+  String weekDotsSemantics(int count);
+
+  /// No description provided for @statsMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'minutes of practice'**
+  String get statsMinutes;
+
+  /// No description provided for @statsSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'sessions completed'**
+  String get statsSessions;
+
+  /// No description provided for @homeContinueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue where you left off'**
+  String get homeContinueTitle;
+
+  /// No description provided for @homeFavoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your favorites'**
+  String get homeFavoritesTitle;
 }
 
 class _AppLocalizationsDelegate

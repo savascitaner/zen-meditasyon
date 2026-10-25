@@ -12,9 +12,13 @@ final audioHandlerProvider = Provider<MeditationAudioHandler>(
 );
 
 /// The practice history, kept on the device.
-final practiceLogRepositoryProvider = Provider<PracticeLogRepository>(
-  (ref) => LocalPracticeLogRepository(ref.watch(sharedPreferencesProvider)),
-);
+final practiceLogRepositoryProvider = Provider<PracticeLogRepository>((ref) {
+  final repository = LocalPracticeLogRepository(
+    ref.watch(sharedPreferencesProvider),
+  );
+  ref.onDispose(repository.dispose);
+  return repository;
+});
 
 /// Overridden in tests to make `startedAt` predictable.
 final clockProvider = Provider<DateTime Function()>((ref) => DateTime.now);

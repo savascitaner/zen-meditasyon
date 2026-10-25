@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zen_meditation/features/player/data/local_practice_log_repository.dart';
@@ -104,6 +105,102 @@ void main() {
 
     expect(await LocalPracticeLogRepository(prefs).getAll(), [a]);
   });
+
+  test('records saved before the newer fields existed still load', () async {
+    final repo = LocalPracticeLogRepository(
+      await prefsWith({
+        LocalPracticeLogRepository.storageKey:
+            '[{"meditationId":"old","startedAt":"2026-10-20T09:00:00.000"}]',
+      }),
+    );
+
+    final sessions = await repo.getAll();
+
+    expect(sessions, hasLength(1));
+    expect(sessions.single.meditationId, 'old');
+    expect(sessions.single.listenedSeconds, 0);
+    expect(sessions.single.completed, isFalse);
+  });
+
+  group('write failures', () {
+    late List<String?> logs;
+    late DebugPrintCallback original;
+
+    setUp(() {
+      logs = [];
+      original = debugPrint;
+      debugPrint = (message, {wrapWidth}) => logs.add(message);
+    });
+
+    tearDown(() => debugPrint = original);
+
+    test('a throwing write is logged and does not throw', () async {
+      final repo = LocalPracticeLogRepository(_FailingPrefs(throws: true));
+
+      await repo.add(session());
+
+      expect(logs.single, contains('saving failed'));
+      // The session is still there for this run.
+      expect(await repo.getAll(), hasLength(1));
+    });
+
+    test('a write that reports false is logged', () async {
+      final repo = LocalPracticeLogRepository(_FailingPrefs(throws: false));
+
+      await repo.add(session());
+
+      expect(logs.single, contains('not saved'));
+    });
+
+    test('later writes still run after a failure', () async {
+      final prefs = _FailingPrefs(throws: true);
+      final repo = LocalPracticeLogRepository(prefs);
+      await repo.add(session());
+
+      prefs.throws = false;
+      prefs.result = true;
+      await repo.add(session(id: 'next'));
+
+      expect(prefs.saved, contains('next'));
+    });
+  });
+
+  test(
+    'dispose closes the change stream and later adds do not throw',
+    () async {
+      final repo = LocalPracticeLogRepository(await prefsWith({}));
+      final sub = repo.watchAll().listen((_) {});
+      await pumpEventQueue();
+
+      await repo.dispose();
+      await pumpEventQueue();
+      await repo.add(session());
+
+      expect(await repo.getAll(), hasLength(1));
+      await sub.cancel();
+    },
+  );
+}
+
+/// Preferences whose writes fail.
+class _FailingPrefs extends Fake implements SharedPreferences {
+  _FailingPrefs({required this.throws});
+
+  bool throws;
+
+  /// What a write that does not throw reports.
+  bool result = false;
+  String? saved;
+
+  @override
+  String? getString(String key) => null;
+
+  @override
+  Future<bool> setString(String key, String value) async {
+    if (throws) throw StateError('disk full');
+    saved = value;
+    return result;
+  }
 }
 
 String _json(PracticeSession s) =>

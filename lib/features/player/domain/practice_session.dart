@@ -22,8 +22,11 @@ abstract class PracticeSession with _$PracticeSession {
     required DateTime startedAt,
 
     /// Seconds actually listened to; skipping ahead does not count.
-    required int listenedSeconds,
-    required bool completed,
+    ///
+    /// The fields below default so records saved by older versions stay
+    /// readable.
+    @Default(0) int listenedSeconds,
+    @Default(false) bool completed,
   }) = _PracticeSession;
 
   factory PracticeSession.fromJson(Map<String, dynamic> json) =>
