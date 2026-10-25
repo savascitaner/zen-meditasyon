@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "appTitle": "Zen",
+  "@appTitle": { "description": "Application name shown in the OS task switcher." },
+  "navToday": "Today",
+  "@navToday": { "description": "Bottom navigation label for the home tab." },
+  "navExplore": "Explore",
+  "@navExplore": { "description": "Bottom navigation label for the explore tab." },
+  "navPrograms": "Programs",
+  "@navPrograms": { "description": "Bottom navigation label for the programs tab." },
+  "navProfile": "Profile",
+  "@navProfile": { "description": "Bottom navigation label for the profile tab." },
+  "homePlaceholder": "Your daily practice will appear here.",
+  "explorePlaceholder": "Meditations and categories will appear here.",
+  "programsPlaceholder": "Guided programs will appear here.",
+  "profilePlaceholder": "Your settings and progress will appear here.",
+  "languageSectionTitle": "Language",
+  "@languageSectionTitle": { "description": "Heading above the language selector on the profile screen." },
+  "languageEnglish": "English",
+  "languageTurkish": "Türkçe",
+  "@languageTurkish": { "description": "Always written in Turkish so users can recognise their language." }
+}

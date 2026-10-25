@@ -1,0 +1,15 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Zen",
+  "navToday": "Bugün",
+  "navExplore": "Keşfet",
+  "navPrograms": "Programlar",
+  "navProfile": "Profil",
+  "homePlaceholder": "Günlük pratiğin burada görünecek.",
+  "explorePlaceholder": "Meditasyonlar ve kategoriler burada görünecek.",
+  "programsPlaceholder": "Rehberli programlar burada görünecek.",
+  "profilePlaceholder": "Ayarların ve ilerlemen burada görünecek.",
+  "languageSectionTitle": "Dil",
+  "languageEnglish": "English",
+  "languageTurkish": "Türkçe"
+}
