@@ -278,11 +278,77 @@ abstract class AppLocalizations {
   /// **'Player'**
   String get playerTitle;
 
-  /// No description provided for @playerPlaceholder.
+  /// No description provided for @playerPlay.
   ///
   /// In en, this message translates to:
-  /// **'The player will appear here soon.'**
-  String get playerPlaceholder;
+  /// **'Play'**
+  String get playerPlay;
+
+  /// No description provided for @playerPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get playerPause;
+
+  /// No description provided for @playerBack15.
+  ///
+  /// In en, this message translates to:
+  /// **'Back 15 seconds'**
+  String get playerBack15;
+
+  /// No description provided for @playerForward15.
+  ///
+  /// In en, this message translates to:
+  /// **'Forward 15 seconds'**
+  String get playerForward15;
+
+  /// No description provided for @playerRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} left'**
+  String playerRemaining(String time);
+
+  /// No description provided for @playerClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close player'**
+  String get playerClose;
+
+  /// No description provided for @playerReplay.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen again'**
+  String get playerReplay;
+
+  /// No description provided for @playerUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This audio can\'t be played right now'**
+  String get playerUnavailableTitle;
+
+  /// No description provided for @playerUnavailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please try again in a moment.'**
+  String get playerUnavailableMessage;
+
+  /// No description provided for @sessionCompleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Session complete'**
+  String get sessionCompleteTitle;
+
+  /// No description provided for @sessionCompleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for taking this time for yourself. Carry this calm with you for as long as it feels good.'**
+  String get sessionCompleteMessage;
+
+  /// No description provided for @sessionCompleteDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get sessionCompleteDone;
 
   /// Heading above the language selector on the profile screen.
   ///
