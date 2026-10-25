@@ -49,7 +49,7 @@ const _smallCatalog = '''
 ''';
 
 /// Fails the first load, then serves [contents].
-class _FlakyBundle extends CachingAssetBundle {
+class _FlakyBundle extends AssetBundle {
   _FlakyBundle(this.contents);
 
   final String contents;
