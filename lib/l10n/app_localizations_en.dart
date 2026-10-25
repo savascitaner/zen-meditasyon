@@ -398,4 +398,107 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reminderInviteNo => 'Not now';
+
+  @override
+  String get safetyNoticeTitle => 'Before you begin';
+
+  @override
+  String get safetyNoticeBody =>
+      'Ensora offers calming practices for everyday life. It is not a health service and does not replace therapy or professional care. If something feels heavy, talking with someone you trust or with a professional can help.';
+
+  @override
+  String get safetyNoticeGotIt => 'Got it';
+
+  @override
+  String get safetyNoticeSupport => 'Find support';
+
+  @override
+  String get crisisTitle => 'Having a hard time?';
+
+  @override
+  String get crisisImmediate =>
+      'If you are in immediate danger, call your local emergency number now.';
+
+  @override
+  String get crisisIntro =>
+      'You don\'t have to go through this alone. These lines are run by independent organisations. Ensora collects nothing from this screen.';
+
+  @override
+  String crisisCallSemantics(String name, String number) {
+    return 'Call $name at $number';
+  }
+
+  @override
+  String get crisisUnknownRegion =>
+      'We don\'t have a number listed for your region yet. The directory below can help you find one.';
+
+  @override
+  String get crisisDirectoryTitle => 'Find a helpline in your country';
+
+  @override
+  String get crisisDirectorySubtitle =>
+      'findahelpline.com lists helplines around the world.';
+
+  @override
+  String get crisisOpenFailed =>
+      'Couldn\'t open this. Please dial the number yourself.';
+
+  @override
+  String get profileDataSection => 'Your data';
+
+  @override
+  String get profileAbout => 'About';
+
+  @override
+  String get profileExportData => 'Export my data';
+
+  @override
+  String get profileExportDataSubtitle =>
+      'Save a copy of your history, favorites and settings as a JSON file.';
+
+  @override
+  String get profileDeleteData => 'Delete my data';
+
+  @override
+  String get profileDeleteDataSubtitle =>
+      'Remove everything Ensora stored on this device.';
+
+  @override
+  String get dataExportFailed =>
+      'Couldn\'t export your data. Please try again.';
+
+  @override
+  String get dataDeleteConfirmTitle => 'Delete your data?';
+
+  @override
+  String get dataDeleteConfirmBody =>
+      'This removes your practice history, favorites, answers and reminder from this device and cancels scheduled reminders. Your language choice stays. This can\'t be undone.';
+
+  @override
+  String get dataDeleteConfirm => 'Delete';
+
+  @override
+  String get dataDeleteCancel => 'Cancel';
+
+  @override
+  String get aboutTitle => 'About';
+
+  @override
+  String get aboutVersion => 'Version';
+
+  @override
+  String get aboutDisclaimer =>
+      'Ensora is not a health service and does not replace therapy or professional care.';
+
+  @override
+  String get aboutPrivacyPolicy => 'Privacy policy';
+
+  @override
+  String get aboutTerms => 'Terms of use';
+
+  @override
+  String get aboutSafetyNote => 'Read the safety note';
+
+  @override
+  String get linkOpenFailed => 'Couldn\'t open the link.';
 }

@@ -11,6 +11,7 @@ import 'package:zen_meditation/features/onboarding/domain/onboarding_profile.dar
 import 'package:zen_meditation/features/onboarding/presentation/onboarding_controller.dart';
 import 'package:zen_meditation/features/onboarding/presentation/survey_screen.dart';
 import 'package:zen_meditation/features/onboarding/presentation/welcome_screen.dart';
+import 'package:zen_meditation/features/safety/presentation/safety_providers.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 
 import '../../helpers/fake_audio_handler.dart';
@@ -116,7 +117,10 @@ void main() {
     testWidgets('finished users go straight to the app', (tester) async {
       await pumpApp(
         tester,
-        stored: {LocalOnboardingRepository.completedKey: true},
+        stored: {
+          LocalOnboardingRepository.completedKey: true,
+          SafetyNoticeSeen.storageKey: true,
+        },
       );
 
       expect(find.byType(WelcomeScreen), findsNothing);

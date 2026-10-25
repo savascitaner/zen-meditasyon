@@ -751,6 +751,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not now'**
   String get reminderInviteNo;
+
+  /// No description provided for @safetyNoticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you begin'**
+  String get safetyNoticeTitle;
+
+  /// No description provided for @safetyNoticeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensora offers calming practices for everyday life. It is not a health service and does not replace therapy or professional care. If something feels heavy, talking with someone you trust or with a professional can help.'**
+  String get safetyNoticeBody;
+
+  /// No description provided for @safetyNoticeGotIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get safetyNoticeGotIt;
+
+  /// No description provided for @safetyNoticeSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Find support'**
+  String get safetyNoticeSupport;
+
+  /// No description provided for @crisisTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Having a hard time?'**
+  String get crisisTitle;
+
+  /// No description provided for @crisisImmediate.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are in immediate danger, call your local emergency number now.'**
+  String get crisisImmediate;
+
+  /// No description provided for @crisisIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have to go through this alone. These lines are run by independent organisations. Ensora collects nothing from this screen.'**
+  String get crisisIntro;
+
+  /// No description provided for @crisisCallSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Call {name} at {number}'**
+  String crisisCallSemantics(String name, String number);
+
+  /// No description provided for @crisisUnknownRegion.
+  ///
+  /// In en, this message translates to:
+  /// **'We don\'t have a number listed for your region yet. The directory below can help you find one.'**
+  String get crisisUnknownRegion;
+
+  /// No description provided for @crisisDirectoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a helpline in your country'**
+  String get crisisDirectoryTitle;
+
+  /// No description provided for @crisisDirectorySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'findahelpline.com lists helplines around the world.'**
+  String get crisisDirectorySubtitle;
+
+  /// No description provided for @crisisOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open this. Please dial the number yourself.'**
+  String get crisisOpenFailed;
+
+  /// No description provided for @profileDataSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data'**
+  String get profileDataSection;
+
+  /// No description provided for @profileAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get profileAbout;
+
+  /// No description provided for @profileExportData.
+  ///
+  /// In en, this message translates to:
+  /// **'Export my data'**
+  String get profileExportData;
+
+  /// No description provided for @profileExportDataSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a copy of your history, favorites and settings as a JSON file.'**
+  String get profileExportDataSubtitle;
+
+  /// No description provided for @profileDeleteData.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete my data'**
+  String get profileDeleteData;
+
+  /// No description provided for @profileDeleteDataSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove everything Ensora stored on this device.'**
+  String get profileDeleteDataSubtitle;
+
+  /// No description provided for @dataExportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t export your data. Please try again.'**
+  String get dataExportFailed;
+
+  /// No description provided for @dataDeleteConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your data?'**
+  String get dataDeleteConfirmTitle;
+
+  /// No description provided for @dataDeleteConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This removes your practice history, favorites, answers and reminder from this device and cancels scheduled reminders. Your language choice stays. This can\'t be undone.'**
+  String get dataDeleteConfirmBody;
+
+  /// No description provided for @dataDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get dataDeleteConfirm;
+
+  /// No description provided for @dataDeleteCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get dataDeleteCancel;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get aboutTitle;
+
+  /// No description provided for @aboutVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get aboutVersion;
+
+  /// No description provided for @aboutDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensora is not a health service and does not replace therapy or professional care.'**
+  String get aboutDisclaimer;
+
+  /// No description provided for @aboutPrivacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get aboutPrivacyPolicy;
+
+  /// No description provided for @aboutTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of use'**
+  String get aboutTerms;
+
+  /// No description provided for @aboutSafetyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the safety note'**
+  String get aboutSafetyNote;
+
+  /// No description provided for @linkOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the link.'**
+  String get linkOpenFailed;
 }
 
 class _AppLocalizationsDelegate
