@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Zen';
+  String get appTitle => 'Ensora';
 
   @override
   String get navToday => 'Today';
@@ -161,4 +161,92 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get languageTurkish => 'Türkçe';
+
+  @override
+  String get welcomeTagline =>
+      'Breathe, settle, and find a little more calm each day.';
+
+  @override
+  String get welcomeGetStarted => 'Get started';
+
+  @override
+  String get welcomeDisclaimer =>
+      'Ensora supports everyday wellbeing. It isn\'t a substitute for professional care.';
+
+  @override
+  String surveyStepOf(int step, int total) {
+    return 'Step $step of $total';
+  }
+
+  @override
+  String get surveyBack => 'Back';
+
+  @override
+  String get surveySkip => 'Skip for now';
+
+  @override
+  String get surveyContinue => 'Continue';
+
+  @override
+  String get surveyFinish => 'Start exploring';
+
+  @override
+  String get surveyStressTitle => 'How have you been feeling lately?';
+
+  @override
+  String get surveyStressSubtitle =>
+      'There\'s no right or wrong answer. This only helps us shape a gentle place to begin.';
+
+  @override
+  String get stressCalmTitle => 'Mostly calm';
+
+  @override
+  String get stressCalmSubtitle => 'Things feel fairly steady.';
+
+  @override
+  String get stressSlightlyTenseTitle => 'A little tense';
+
+  @override
+  String get stressSlightlyTenseSubtitle =>
+      'Some days feel busier than others.';
+
+  @override
+  String get stressStressedTitle => 'Often stressed';
+
+  @override
+  String get stressStressedSubtitle =>
+      'My mind is busy or restless much of the time.';
+
+  @override
+  String get stressOverwhelmedTitle => 'Overwhelmed';
+
+  @override
+  String get stressOverwhelmedSubtitle => 'It has all felt like a lot lately.';
+
+  @override
+  String get surveyExperienceTitle => 'How familiar are you with meditation?';
+
+  @override
+  String get surveyExperienceSubtitle => 'Every starting point is a good one.';
+
+  @override
+  String get experienceNewcomerTitle => 'I\'m new to it';
+
+  @override
+  String get experienceNewcomerSubtitle =>
+      'Short, simple sessions are a good start.';
+
+  @override
+  String get experienceSomeTitle => 'I\'ve tried it a few times';
+
+  @override
+  String get experienceSomeSubtitle =>
+      'I know the basics and want to keep going.';
+
+  @override
+  String get experienceRegularTitle => 'I practise regularly';
+
+  @override
+  String get experienceRegularSubtitle =>
+      'Meditation is already part of my routine.';
 }

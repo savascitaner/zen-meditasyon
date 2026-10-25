@@ -6,6 +6,7 @@ import 'package:zen_meditation/app.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/core/router/app_router.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
+import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 import 'package:zen_meditation/features/player/presentation/session_complete_sheet.dart';
 import 'package:zen_meditation/features/player/presentation/widgets/breathing_circle.dart';
@@ -17,7 +18,9 @@ Future<FakeAudioHandler> openPlayer(
   WidgetTester tester, {
   Object? loadError,
 }) async {
-  SharedPreferences.setMockInitialValues({});
+  SharedPreferences.setMockInitialValues({
+    LocalOnboardingRepository.completedKey: true,
+  });
   final prefs = await SharedPreferences.getInstance();
   final handler = FakeAudioHandler(length: const Duration(seconds: 100))
     ..loadError = loadError;

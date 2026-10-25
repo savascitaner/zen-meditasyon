@@ -5,6 +5,8 @@ abstract final class RouteNames {
   static const profile = 'profile';
   static const meditationDetail = 'meditationDetail';
   static const player = 'player';
+  static const welcome = 'welcome';
+  static const onboardingSurvey = 'onboardingSurvey';
 
   static const homePath = '/home';
   static const explorePath = '/explore';
@@ -12,6 +14,11 @@ abstract final class RouteNames {
   static const profilePath = '/profile';
   static const meditationDetailPath = '/meditation/:id';
   static const playerPath = '/player/:id';
+
+  /// Every onboarding screen lives under this path.
+  static const welcomePath = '/onboarding';
+  static const onboardingSurveyPath = '/onboarding/survey';
+  static const onboardingSurveySubPath = 'survey';
 
   static String meditationDetailLocation(String id) =>
       '/meditation/${Uri.encodeComponent(id)}';
