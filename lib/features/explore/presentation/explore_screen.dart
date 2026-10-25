@@ -8,6 +8,7 @@ import '../../../l10n/app_localizations.dart';
 import '../../../shared/extensions/localized_text_x.dart';
 import '../../../shared/widgets/empty_state.dart';
 import '../../../shared/widgets/error_state.dart';
+import '../../../shared/widgets/zen_background.dart';
 import '../../content/domain/models/category.dart';
 import '../../content/domain/models/meditation.dart';
 import '../../content/presentation/providers/content_providers.dart';
@@ -28,44 +29,67 @@ class ExploreScreen extends ConsumerWidget {
     final categories = ref.watch(categoriesProvider).value ?? const [];
     final meditations = ref.watch(visibleMeditationsProvider);
 
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.navExplore)),
-      body: Column(
-        children: [
-          CategoryChips(
-            categories: categories,
-            selectedId: filter.categoryId,
-            onSelected: filterNotifier.selectCategory,
-          ),
-          DurationFilter(
-            selectedMinutes: filter.maxDuration,
-            onSelected: filterNotifier.selectMaxDuration,
-          ),
-          Expanded(
-            child: meditations.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (_, _) => ErrorState(
-                onRetry: () {
-                  ref.invalidate(categoriesProvider);
-                  ref.invalidate(allMeditationsProvider);
-                },
+    return ZenBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SafeArea(
+          bottom: false,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.gutter,
+                  AppSpacing.lg,
+                  AppSpacing.gutter,
+                  AppSpacing.md,
+                ),
+                child: Semantics(
+                  header: true,
+                  child: Text(
+                    l10n.navExplore,
+                    style: Theme.of(context).textTheme.displaySmall,
+                  ),
+                ),
               ),
-              data: (items) => items.isEmpty
-                  ? EmptyState(
-                      icon: Icons.search_off,
-                      title: l10n.exploreEmptyTitle,
-                      message: l10n.exploreEmptyMessage,
-                      actionLabel: l10n.exploreClearFilters,
-                      onAction: filterNotifier.clear,
-                    )
-                  : _MeditationList(
-                      meditations: items,
-                      categories: categories,
-                      selectedCategoryId: filter.categoryId,
-                    ),
-            ),
+              CategoryChips(
+                categories: categories,
+                selectedId: filter.categoryId,
+                onSelected: filterNotifier.selectCategory,
+              ),
+              DurationFilter(
+                selectedMinutes: filter.maxDuration,
+                onSelected: filterNotifier.selectMaxDuration,
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Expanded(
+                child: meditations.when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (_, _) => ErrorState(
+                    onRetry: () {
+                      ref.invalidate(categoriesProvider);
+                      ref.invalidate(allMeditationsProvider);
+                    },
+                  ),
+                  data: (items) => items.isEmpty
+                      ? EmptyState(
+                          icon: Icons.search_off,
+                          title: l10n.exploreEmptyTitle,
+                          message: l10n.exploreEmptyMessage,
+                          actionLabel: l10n.exploreClearFilters,
+                          onAction: filterNotifier.clear,
+                        )
+                      : _MeditationList(
+                          meditations: items,
+                          categories: categories,
+                          selectedCategoryId: filter.categoryId,
+                        ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -98,37 +122,42 @@ class _MeditationList extends StatelessWidget {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
 
-    return ListView.separated(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.md,
-        AppSpacing.sm,
-        AppSpacing.md,
-        AppSpacing.lg,
-      ),
-      // The first row is the result count.
-      itemCount: meditations.length + 1,
-      separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
-      itemBuilder: (context, index) {
-        if (index == 0) {
-          return Semantics(
-            liveRegion: true,
-            child: Text(
-              l10n.exploreResultCount(meditations.length),
-              style: theme.textTheme.labelLarge?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+    // One shared blur for every glass card in the list.
+    return BackdropGroup(
+      child: ListView.separated(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.gutter,
+          AppSpacing.sm,
+          AppSpacing.gutter,
+          AppSpacing.xl,
+        ),
+        // The first row is the result count.
+        itemCount: meditations.length + 1,
+        separatorBuilder: (_, index) =>
+            SizedBox(height: index == 0 ? AppSpacing.sm : AppSpacing.cardGap),
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return Semantics(
+              liveRegion: true,
+              child: Text(
+                l10n.exploreResultCount(meditations.length),
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
               ),
+            );
+          }
+          final meditation = meditations[index - 1];
+          return MeditationCard(
+            key: ValueKey(meditation.id),
+            meditation: meditation,
+            categoryLabel: _categoryLabel(context, meditation),
+            onTap: () => context.push(
+              RouteNames.meditationDetailLocation(meditation.id),
             ),
           );
-        }
-        final meditation = meditations[index - 1];
-        return MeditationCard(
-          key: ValueKey(meditation.id),
-          meditation: meditation,
-          categoryLabel: _categoryLabel(context, meditation),
-          onTap: () =>
-              context.push(RouteNames.meditationDetailLocation(meditation.id)),
-        );
-      },
+        },
+      ),
     );
   }
 }

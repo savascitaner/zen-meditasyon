@@ -24,7 +24,7 @@ class CoverArt extends StatelessWidget {
     final source = imageSource;
     return ClipRRect(
       borderRadius: borderRadius,
-      child: source == null
+      child: source == null || source.isEmpty
           ? _GradientCover(seed: seed)
           : source.startsWith('http')
           ? Image.network(
@@ -62,7 +62,7 @@ class _GradientCover extends StatelessWidget {
       child: Center(
         child: Icon(
           Icons.self_improvement,
-          color: AppColors.onAccentContainer.withValues(alpha: 0.5),
+          color: AppColors.textPastel.withValues(alpha: 0.7),
         ),
       ),
     );

@@ -33,7 +33,9 @@ abstract final class AppTheme {
       scaffoldBackgroundColor: AppColors.background,
       textTheme: textTheme,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.background,
+        // Transparent so screens on a ZenBackground keep their gradient.
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         foregroundColor: AppColors.textPrimary,
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -41,8 +43,9 @@ abstract final class AppTheme {
         titleTextStyle: textTheme.titleLarge,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: AppColors.surface,
-        indicatorColor: AppColors.accentContainer,
+        // Continues the bottom of the background gradient.
+        backgroundColor: AppColors.backgroundBottom,
+        indicatorColor: AppColors.navIndicator,
         surfaceTintColor: Colors.transparent,
         labelTextStyle: WidgetStateProperty.resolveWith(
           (states) => textTheme.labelMedium?.copyWith(
@@ -54,7 +57,7 @@ abstract final class AppTheme {
         iconTheme: WidgetStateProperty.resolveWith(
           (states) => IconThemeData(
             color: states.contains(WidgetState.selected)
-                ? AppColors.onAccentContainer
+                ? AppColors.textPrimary
                 : AppColors.textSecondary,
           ),
         ),
@@ -69,11 +72,14 @@ abstract final class AppTheme {
         ),
       ),
       cardTheme: CardThemeData(
-        color: AppColors.surface,
+        // Light glass over the background; no blur, so it is cheap anywhere.
+        color: AppColors.glassFillTop,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
+          side: const BorderSide(color: AppColors.glassBorder, width: 0.5),
         ),
       ),
       dividerTheme: const DividerThemeData(color: AppColors.outline),

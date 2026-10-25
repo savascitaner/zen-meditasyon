@@ -23,6 +23,7 @@ class DurationFilter extends StatelessWidget {
       semanticsLabel: l10n.exploreDurationFilterLabel,
       selected: selectedMinutes,
       onSelected: onSelected,
+      glow: false,
       options: [
         FilterChipOption(value: null, label: l10n.exploreAnyDuration),
         for (final minutes in meditationDurationOptions)

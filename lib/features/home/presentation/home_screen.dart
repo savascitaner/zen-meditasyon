@@ -8,6 +8,7 @@ import '../../../core/router/route_names.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/extensions/localized_text_x.dart';
+import '../../../shared/widgets/zen_background.dart';
 import '../../content/domain/models/meditation.dart';
 import '../../content/presentation/providers/content_providers.dart';
 import '../../library/presentation/providers/library_providers.dart';
@@ -79,48 +80,51 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     }
 
     const gap = SizedBox(height: AppSpacing.lg);
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.navToday)),
-      body: ListView(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        children: [
-          GreetingHeader(now: now),
-          gap,
-          if (recommendation != null) ...[
-            RecommendationCard(
-              meditation: recommendation,
-              categoryLabel: categoryLabel(recommendation),
-              onTap: () => _open(recommendation),
-            ),
+    return ZenBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(title: Text(l10n.navToday)),
+        body: ListView(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          children: [
+            GreetingHeader(now: now),
             gap,
-          ],
-          if (stats != null) ...[
-            StreakCard(stats: stats, firstDayOfWeekIndex: firstDay),
-            if (stats.hasHistory) ...[
-              const SizedBox(height: AppSpacing.md),
-              StatsRow(stats: stats),
+            if (recommendation != null) ...[
+              RecommendationCard(
+                meditation: recommendation,
+                categoryLabel: categoryLabel(recommendation),
+                onTap: () => _open(recommendation),
+              ),
+              gap,
             ],
-            gap,
+            if (stats != null) ...[
+              StreakCard(stats: stats, firstDayOfWeekIndex: firstDay),
+              if (stats.hasHistory) ...[
+                const SizedBox(height: AppSpacing.md),
+                StatsRow(stats: stats),
+              ],
+              gap,
+            ],
+            if (ref.watch(showReminderInviteProvider)) ...[
+              const ReminderInviteCard(),
+              gap,
+            ],
+            if (recent.isNotEmpty) ...[
+              HorizontalMeditationStrip(
+                title: l10n.homeContinueTitle,
+                meditations: recent,
+                onTap: _open,
+              ),
+              gap,
+            ],
+            if (favorites.isNotEmpty)
+              HorizontalMeditationStrip(
+                title: l10n.homeFavoritesTitle,
+                meditations: favorites,
+                onTap: _open,
+              ),
           ],
-          if (ref.watch(showReminderInviteProvider)) ...[
-            const ReminderInviteCard(),
-            gap,
-          ],
-          if (recent.isNotEmpty) ...[
-            HorizontalMeditationStrip(
-              title: l10n.homeContinueTitle,
-              meditations: recent,
-              onTap: _open,
-            ),
-            gap,
-          ],
-          if (favorites.isNotEmpty)
-            HorizontalMeditationStrip(
-              title: l10n.homeFavoritesTitle,
-              meditations: favorites,
-              onTap: _open,
-            ),
-        ],
+        ),
       ),
     );
   }
