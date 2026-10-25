@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zen_meditation/app.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
+import 'package:zen_meditation/features/safety/presentation/safety_providers.dart';
 
 Future<void> pumpApp(
   WidgetTester tester, {
@@ -13,6 +14,7 @@ Future<void> pumpApp(
 }) async {
   SharedPreferences.setMockInitialValues({
     LocalOnboardingRepository.completedKey: true,
+    SafetyNoticeSeen.storageKey: true,
     ...stored,
   });
   final prefs = await SharedPreferences.getInstance();

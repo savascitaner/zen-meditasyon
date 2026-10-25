@@ -383,4 +383,105 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get reminderInviteNo => 'Şimdi değil';
+
+  @override
+  String get safetyNoticeTitle => 'Başlamadan önce';
+
+  @override
+  String get safetyNoticeBody =>
+      'Ensora, günlük hayat için sakinleştirici pratikler sunar. Bir sağlık hizmeti değildir; terapinin ya da profesyonel desteğin yerine geçmez. Bir şey ağır geliyorsa, güvendiğin biriyle ya da bir uzmanla konuşmak iyi gelebilir.';
+
+  @override
+  String get safetyNoticeGotIt => 'Anladım';
+
+  @override
+  String get safetyNoticeSupport => 'Destek bul';
+
+  @override
+  String get crisisTitle => 'Zor bir an mı yaşıyorsun?';
+
+  @override
+  String get crisisImmediate => 'Hemen tehlikedeysen yerel acil numarayı ara.';
+
+  @override
+  String get crisisIntro =>
+      'Bunu tek başına yaşamak zorunda değilsin. Bu hatlar bağımsız kuruluşlar tarafından işletilir. Ensora bu ekrandan hiçbir veri toplamaz.';
+
+  @override
+  String crisisCallSemantics(String name, String number) {
+    return '$name hattını ara: $number';
+  }
+
+  @override
+  String get crisisUnknownRegion =>
+      'Bölgen için henüz listelenmiş bir numara yok. Aşağıdaki rehber bir tane bulmana yardımcı olabilir.';
+
+  @override
+  String get crisisDirectoryTitle => 'Ülkende bir yardım hattı bul';
+
+  @override
+  String get crisisDirectorySubtitle =>
+      'findahelpline.com dünya genelindeki yardım hatlarını listeler.';
+
+  @override
+  String get crisisOpenFailed => 'Açılamadı. Lütfen numarayı kendin ara.';
+
+  @override
+  String get profileDataSection => 'Verilerin';
+
+  @override
+  String get profileAbout => 'Hakkında';
+
+  @override
+  String get profileExportData => 'Verilerimi dışa aktar';
+
+  @override
+  String get profileExportDataSubtitle =>
+      'Geçmişinin, favorilerinin ve ayarlarının bir kopyasını JSON dosyası olarak kaydet.';
+
+  @override
+  String get profileDeleteData => 'Verilerimi sil';
+
+  @override
+  String get profileDeleteDataSubtitle =>
+      'Ensora\'nın bu cihazda sakladığı her şeyi kaldır.';
+
+  @override
+  String get dataExportFailed =>
+      'Verilerin dışa aktarılamadı. Lütfen tekrar dene.';
+
+  @override
+  String get dataDeleteConfirmTitle => 'Verilerin silinsin mi?';
+
+  @override
+  String get dataDeleteConfirmBody =>
+      'Pratik geçmişin, favorilerin, cevapların ve hatırlatıcın bu cihazdan silinir; planlı hatırlatmalar iptal edilir. Dil tercihin korunur. Bu işlem geri alınamaz.';
+
+  @override
+  String get dataDeleteConfirm => 'Sil';
+
+  @override
+  String get dataDeleteCancel => 'Vazgeç';
+
+  @override
+  String get aboutTitle => 'Hakkında';
+
+  @override
+  String get aboutVersion => 'Sürüm';
+
+  @override
+  String get aboutDisclaimer =>
+      'Ensora bir sağlık hizmeti değildir; terapinin ya da profesyonel desteğin yerine geçmez.';
+
+  @override
+  String get aboutPrivacyPolicy => 'Gizlilik politikası';
+
+  @override
+  String get aboutTerms => 'Kullanım koşulları';
+
+  @override
+  String get aboutSafetyNote => 'Güvenlik notunu oku';
+
+  @override
+  String get linkOpenFailed => 'Bağlantı açılamadı.';
 }

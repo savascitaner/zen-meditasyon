@@ -9,6 +9,7 @@ import 'package:zen_meditation/features/home/presentation/widgets/recommendation
 import 'package:zen_meditation/features/library/data/local_favorites_repository.dart';
 import 'package:zen_meditation/features/meditation_detail/presentation/meditation_detail_screen.dart';
 import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
+import 'package:zen_meditation/features/safety/presentation/safety_providers.dart';
 import 'package:zen_meditation/features/player/domain/practice_session.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 
@@ -35,6 +36,7 @@ Future<InMemoryPracticeLogRepository> pumpHome(
 }) async {
   SharedPreferences.setMockInitialValues({
     LocalOnboardingRepository.completedKey: true,
+    SafetyNoticeSeen.storageKey: true,
     ...stored,
   });
   final prefs = await SharedPreferences.getInstance();

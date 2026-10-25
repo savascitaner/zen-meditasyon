@@ -18,7 +18,7 @@ import 'session_complete_sheet.dart';
 import 'widgets/breathing_circle.dart';
 import 'widgets/progress_ring.dart';
 
-// TODO(Görev 9): This route can be opened directly (/player/:id), so the
+// TODO(Görev 11): This route can be opened directly (/player/:id), so the
 // premium check in MeditationDetailScreen is not enough. Refuse premium
 // content here too, or enforce it in the repository or entitlement layer.
 /// Plays one meditation with a breathing circle, progress ring and controls.

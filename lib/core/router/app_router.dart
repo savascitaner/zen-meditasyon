@@ -10,9 +10,12 @@ import '../../features/onboarding/presentation/onboarding_controller.dart';
 import '../../features/onboarding/presentation/survey_screen.dart';
 import '../../features/onboarding/presentation/welcome_screen.dart';
 import '../../features/player/presentation/player_screen.dart';
+import '../../features/profile/presentation/about_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/programs/presentation/programs_screen.dart';
 import '../../features/reminders/presentation/reminder_controller.dart';
+import '../../features/safety/presentation/crisis_support_screen.dart';
+import '../../features/safety/presentation/safety_notice_sheet.dart';
 import '../../shared/widgets/app_scaffold_with_nav.dart';
 import 'onboarding_redirect.dart';
 import 'route_names.dart';
@@ -51,8 +54,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         ],
       ),
       StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) =>
-            AppScaffoldWithNav(navigationShell: navigationShell),
+        builder: (context, state, navigationShell) => SafetyNoticeGate(
+          child: AppScaffoldWithNav(navigationShell: navigationShell),
+        ),
         branches: [
           StatefulShellBranch(
             routes: [
@@ -103,6 +107,16 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: RouteNames.favoritesPath,
         name: RouteNames.favorites,
         builder: (context, state) => const FavoritesScreen(),
+      ),
+      GoRoute(
+        path: RouteNames.aboutPath,
+        name: RouteNames.about,
+        builder: (context, state) => const AboutScreen(),
+      ),
+      GoRoute(
+        path: RouteNames.crisisSupportPath,
+        name: RouteNames.crisisSupport,
+        builder: (context, state) => const CrisisSupportScreen(),
       ),
       GoRoute(
         path: RouteNames.playerPath,

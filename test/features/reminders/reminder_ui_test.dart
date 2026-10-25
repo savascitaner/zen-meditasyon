@@ -8,6 +8,7 @@ import 'package:zen_meditation/app.dart';
 import 'package:zen_meditation/core/l10n/locale_controller.dart';
 import 'package:zen_meditation/features/content/presentation/providers/content_providers.dart';
 import 'package:zen_meditation/features/onboarding/data/local_onboarding_repository.dart';
+import 'package:zen_meditation/features/safety/presentation/safety_providers.dart';
 import 'package:zen_meditation/features/player/domain/practice_session.dart';
 import 'package:zen_meditation/features/player/presentation/player_providers.dart';
 import 'package:zen_meditation/features/reminders/data/reminder_settings_repository.dart';
@@ -38,6 +39,7 @@ Future<void> pumpApp(
 }) async {
   SharedPreferences.setMockInitialValues({
     LocalOnboardingRepository.completedKey: true,
+    SafetyNoticeSeen.storageKey: true,
     ...stored,
   });
   final prefs = await SharedPreferences.getInstance();
