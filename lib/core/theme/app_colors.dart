@@ -25,4 +25,13 @@ abstract final class AppColors {
 
   static const Color error = Color(0xFFE8A39B);
   static const Color onError = Color(0xFF3B1310);
+
+  /// Placeholder cover gradients for content without artwork. Decorative
+  /// only; text is never drawn on them.
+  static const List<List<Color>> coverGradients = [
+    [Color(0xFF2C3F38), Color(0xFF1A2029)],
+    [Color(0xFF2E2A45), Color(0xFF1A2029)],
+    [Color(0xFF233446), Color(0xFF1A2029)],
+    [Color(0xFF3A3530), Color(0xFF1A2029)],
+  ];
 }

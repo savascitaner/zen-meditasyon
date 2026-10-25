@@ -16,6 +16,11 @@ final categoriesProvider = FutureProvider<List<Category>>(
   (ref) => ref.watch(contentRepositoryProvider).getCategories(),
 );
 
+/// The whole catalog, loaded once. Explore filters it in memory.
+final allMeditationsProvider = FutureProvider<List<Meditation>>(
+  (ref) => ref.watch(contentRepositoryProvider).getMeditations(),
+);
+
 final meditationsProvider =
     FutureProvider.family<List<Meditation>, MeditationFilter>(
       (ref, filter) => ref

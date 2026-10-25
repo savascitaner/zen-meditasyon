@@ -37,6 +37,34 @@ assets/content/catalog.json   # mock content: categories, meditations, programs
 test/                         # app_smoke_test, theme contrast test, content repository
 ```
 
+## Audio player (background and lock screen)
+
+Packages: `just_audio` (playback), `audio_service` (notification, lock screen, background service), `audio_session` (audio focus).
+
+Native changes the player needs:
+
+- **Android** `AndroidManifest.xml`: permissions `INTERNET`, `WAKE_LOCK`, `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_MEDIA_PLAYBACK`, `POST_NOTIFICATIONS`; the `com.ryanheise.audioservice.AudioService` service (`foregroundServiceType="mediaPlayback"`) and `MediaButtonReceiver`.
+- **Android** `MainActivity.kt`: extends `AudioServiceActivity` instead of `FlutterActivity`.
+- **iOS** `Info.plist`: `UIBackgroundModes` with `audio`.
+- Android 13+ shows the playback notification only after the user allows notifications. Nothing asks for that permission yet; add the runtime request (for example when the first session starts) before release.
+- Lock screen and notification cover art only shows `http(s)` cover URLs; Flutter asset covers cannot be shown by the system.
+
+Audio files: sources are `assets/audio/...` paths or URLs. The catalog points at `assets/audio/sample.mp3`, which is not in the repo; add a royalty-free file with that name. Without it the player shows "This audio can't be played right now" with a retry button.
+
+Manual test on a real device (cannot be covered by unit tests):
+
+1. Add `assets/audio/sample.mp3`, run `flutter run` on a phone, open a free meditation, tap **Start**.
+2. Press play. The ring fills and the breathing circle moves.
+3. Lock the screen. Audio keeps playing; the lock screen shows title, narrator and play/pause, back 15 s and forward 15 s.
+4. Pause from the lock screen or notification; the app (when reopened) shows the paused state. Play again from there.
+5. Pull down the notification shade (Android) or open Control Center (iOS): same controls and title.
+6. Switch to another app: audio continues.
+7. Call the phone (or start another audio app): playback pauses and does not resume by itself.
+8. Unplug wired headphones or disconnect Bluetooth while playing: playback pauses.
+9. Skip back/forward 15 s from the app and from the lock screen.
+10. Listen to the end: the "Session complete" sheet appears. Leave early (back arrow) before 80%: no sheet, the notification disappears.
+11. Remove `sample.mp3` and open a meditation: the friendly error with retry appears.
+
 ## Conventions
 
 - No hard-coded text: add strings to both `.arb` files.

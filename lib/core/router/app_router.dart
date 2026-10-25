@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/explore/presentation/explore_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
+import '../../features/meditation_detail/presentation/meditation_detail_screen.dart';
+import '../../features/player/presentation/player_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/programs/presentation/programs_screen.dart';
 import '../../shared/widgets/app_scaffold_with_nav.dart';
@@ -53,6 +55,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             ],
           ),
         ],
+      ),
+      // Full-screen routes above the tab bar.
+      GoRoute(
+        path: RouteNames.meditationDetailPath,
+        name: RouteNames.meditationDetail,
+        builder: (context, state) =>
+            MeditationDetailScreen(meditationId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: RouteNames.playerPath,
+        name: RouteNames.player,
+        builder: (context, state) =>
+            PlayerScreen(meditationId: state.pathParameters['id']!),
       ),
     ],
   );
