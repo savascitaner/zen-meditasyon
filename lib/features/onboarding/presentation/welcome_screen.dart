@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +13,9 @@ import 'widgets/staggered_entrance.dart';
 /// First screen of the app: a slowly breathing glow, the Ensora name and one
 /// action. Its text settles in piece by piece, or appears at once when the
 /// system asks to reduce motion.
+///
+/// The content scrolls when it does not fit, so large text sizes never
+/// overflow on small screens.
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
@@ -26,6 +31,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     vsync: this,
     duration: WelcomeScreen.entranceDuration,
   );
+  late final CurvedAnimation _orbFade = CurvedAnimation(
+    parent: _entrance,
+    curve: const Interval(0, 0.6, curve: Curves.easeOut),
+  );
 
   @override
   void didChangeDependencies() {
@@ -39,6 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
   @override
   void dispose() {
+    _orbFade.dispose();
     _entrance.dispose();
     super.dispose();
   }
@@ -47,7 +57,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    final orbSize = MediaQuery.sizeOf(context).shortestSide * 0.8;
 
     return Scaffold(
       body: DecoratedBox(
@@ -59,84 +68,93 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           ),
         ),
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: Center(
-                    child: FadeTransition(
-                      opacity: CurvedAnimation(
-                        parent: _entrance,
-                        curve: const Interval(0, 0.6, curve: Curves.easeOut),
-                      ),
-                      child: CalmOrb(size: orbSize),
-                    ),
-                  ),
-                ),
-                StaggeredEntrance(
-                  animation: _entrance,
-                  start: 0.2,
-                  end: 0.7,
-                  child: Semantics(
-                    header: true,
-                    child: Text(
-                      l10n.appTitle,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.displaySmall?.copyWith(
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                StaggeredEntrance(
-                  animation: _entrance,
-                  start: 0.35,
-                  end: 0.85,
-                  child: Text(
-                    l10n.welcomeTagline,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xl),
-                StaggeredEntrance(
-                  animation: _entrance,
-                  start: 0.5,
-                  child: FilledButton(
-                    style: FilledButton.styleFrom(
-                      minimumSize: const Size.fromHeight(
-                        AppSpacing.minTouchTarget + AppSpacing.sm,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSpacing.radiusLg,
+          child: LayoutBuilder(
+            builder: (context, constraints) => SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+              child: ConstrainedBox(
+                // Fill the screen when content is short, so it stays centred.
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Center(
+                      child: FadeTransition(
+                        opacity: _orbFade,
+                        // Smaller on short screens, so the action stays in view.
+                        child: CalmOrb(
+                          size: math.min(
+                            MediaQuery.sizeOf(context).shortestSide * 0.8,
+                            constraints.maxHeight * 0.4,
+                          ),
                         ),
                       ),
                     ),
-                    onPressed: () =>
-                        context.goNamed(RouteNames.onboardingSurvey),
-                    child: Text(l10n.welcomeGetStarted),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                StaggeredEntrance(
-                  animation: _entrance,
-                  start: 0.6,
-                  child: Text(
-                    l10n.welcomeDisclaimer,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
+                    const SizedBox(height: AppSpacing.lg),
+                    StaggeredEntrance(
+                      animation: _entrance,
+                      start: 0.2,
+                      end: 0.7,
+                      child: Semantics(
+                        header: true,
+                        child: Text(
+                          l10n.appTitle,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.displaySmall?.copyWith(
+                            letterSpacing: 2,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: AppSpacing.md),
+                    StaggeredEntrance(
+                      animation: _entrance,
+                      start: 0.35,
+                      end: 0.85,
+                      child: Text(
+                        l10n.welcomeTagline,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xl),
+                    StaggeredEntrance(
+                      animation: _entrance,
+                      start: 0.5,
+                      child: FilledButton(
+                        style: FilledButton.styleFrom(
+                          minimumSize: const Size.fromHeight(
+                            AppSpacing.minTouchTarget + AppSpacing.sm,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              AppSpacing.radiusLg,
+                            ),
+                          ),
+                        ),
+                        onPressed: () =>
+                            context.goNamed(RouteNames.onboardingSurvey),
+                        child: Text(l10n.welcomeGetStarted),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    StaggeredEntrance(
+                      animation: _entrance,
+                      start: 0.6,
+                      child: Text(
+                        l10n.welcomeDisclaimer,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.lg),
+                  ],
                 ),
-                const SizedBox(height: AppSpacing.lg),
-              ],
+              ),
             ),
           ),
         ),

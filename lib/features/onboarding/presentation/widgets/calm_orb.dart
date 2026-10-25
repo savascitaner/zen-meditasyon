@@ -49,21 +49,25 @@ class _CalmOrbState extends State<CalmOrb> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    // Repaints only this layer each frame; the rest of the welcome screen
+    // stays cached.
     return ExcludeSemantics(
-      child: SizedBox.square(
-        dimension: widget.size,
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, _) => Stack(
-            alignment: Alignment.center,
-            children: [
-              for (var ring = _rings - 1; ring >= 0; ring--)
-                _Ring(
-                  breath: _breath(_controller.value - ring * 0.08),
-                  baseScale: 0.55 + ring * 0.2,
-                  opacity: 0.55 - ring * 0.15,
-                ),
-            ],
+      child: RepaintBoundary(
+        child: SizedBox.square(
+          dimension: widget.size,
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, _) => Stack(
+              alignment: Alignment.center,
+              children: [
+                for (var ring = _rings - 1; ring >= 0; ring--)
+                  _Ring(
+                    breath: _breath(_controller.value - ring * 0.08),
+                    baseScale: 0.55 + ring * 0.2,
+                    opacity: 0.55 - ring * 0.15,
+                  ),
+              ],
+            ),
           ),
         ),
       ),

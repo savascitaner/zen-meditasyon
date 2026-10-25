@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ///
 /// Several of these share one controller, each with a later [start], so a
 /// screen settles in piece by piece.
-class StaggeredEntrance extends StatelessWidget {
+class StaggeredEntrance extends StatefulWidget {
   const StaggeredEntrance({
     required this.animation,
     required this.start,
@@ -21,20 +21,54 @@ class StaggeredEntrance extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
-    final curved = CurvedAnimation(
-      parent: animation,
-      curve: Interval(start, end, curve: Curves.easeOutCubic),
+  State<StaggeredEntrance> createState() => _StaggeredEntranceState();
+}
+
+class _StaggeredEntranceState extends State<StaggeredEntrance> {
+  // A CurvedAnimation listens to its parent, so it is created once here and
+  // disposed with this state rather than rebuilt on every build.
+  late CurvedAnimation _curved;
+  late Animation<Offset> _slide;
+
+  @override
+  void initState() {
+    super.initState();
+    _createCurve();
+  }
+
+  @override
+  void didUpdateWidget(StaggeredEntrance oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.animation != widget.animation ||
+        oldWidget.start != widget.start ||
+        oldWidget.end != widget.end) {
+      _curved.dispose();
+      _createCurve();
+    }
+  }
+
+  void _createCurve() {
+    _curved = CurvedAnimation(
+      parent: widget.animation,
+      curve: Interval(widget.start, widget.end, curve: Curves.easeOutCubic),
     );
+    _slide = Tween(
+      begin: const Offset(0, 0.15),
+      end: Offset.zero,
+    ).animate(_curved);
+  }
+
+  @override
+  void dispose() {
+    _curved.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return FadeTransition(
-      opacity: curved,
-      child: SlideTransition(
-        position: Tween(
-          begin: const Offset(0, 0.15),
-          end: Offset.zero,
-        ).animate(curved),
-        child: child,
-      ),
+      opacity: _curved,
+      child: SlideTransition(position: _slide, child: widget.child),
     );
   }
 }
