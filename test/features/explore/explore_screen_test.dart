@@ -90,6 +90,25 @@ void main() {
     expect(find.text('3 meditations'), findsOneWidget);
   });
 
+  testWidgets('changing filters neither reloads nor shows a spinner', (
+    tester,
+  ) async {
+    final repository = FakeContentRepository();
+    await openExplore(tester, repository: repository);
+    expect(repository.meditationCalls, 1);
+
+    await tester.tap(chip('Focus'));
+    // No settle: a reload would show a spinner right now.
+    await tester.pump();
+    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(find.text('1 meditation'), findsOneWidget);
+
+    await tester.tap(chip('All'));
+    await tester.pump();
+    expect(find.text('3 meditations'), findsOneWidget);
+    expect(repository.meditationCalls, 1);
+  });
+
   testWidgets('duration filter keeps shorter meditations', (tester) async {
     await openExplore(tester, repository: FakeContentRepository());
 

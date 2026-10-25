@@ -23,6 +23,9 @@ class FakeContentRepository implements ContentRepository {
   Completer<void>? gate;
   bool fail = false;
 
+  /// Number of `getMeditations` calls, to check the catalog is not reloaded.
+  int meditationCalls = 0;
+
   Future<void> _wait() async {
     await gate?.future;
     if (fail) throw StateError('content unavailable');
@@ -40,6 +43,7 @@ class FakeContentRepository implements ContentRepository {
     int? maxDuration,
     bool includePremium = true,
   }) async {
+    meditationCalls++;
     await _wait();
     return [
       for (final m in meditations)

@@ -26,7 +26,7 @@ class ExploreScreen extends ConsumerWidget {
     final filter = ref.watch(exploreFilterProvider);
     final filterNotifier = ref.read(exploreFilterProvider.notifier);
     final categories = ref.watch(categoriesProvider).value ?? const [];
-    final meditations = ref.watch(meditationsProvider(filter));
+    final meditations = ref.watch(visibleMeditationsProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.navExplore)),
@@ -47,7 +47,7 @@ class ExploreScreen extends ConsumerWidget {
               error: (_, _) => ErrorState(
                 onRetry: () {
                   ref.invalidate(categoriesProvider);
-                  ref.invalidate(meditationsProvider(filter));
+                  ref.invalidate(allMeditationsProvider);
                 },
               ),
               data: (items) => items.isEmpty
